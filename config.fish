@@ -20,13 +20,14 @@ alias twmo='typst watch main.typ out.pdf'
 alias sr='scenery r'
 alias gitlog='git log --oneline --decorate --graph --branches'
 alias fishconf='hx ~/.config/fish/config.fish; source ~/.config/fish/config.fish'
+alias i3conf='hx ~/.config/i3/config; i3-msg reload'
 alias tmuxconf='hx ~/.tmux.conf; tmux source-file ~/.tmux.conf'
 alias xmodmapconf='hx ~/.xmodmap; xmodmap ~/.xmodmap'
 alias alacrittyconf='hx ~/.config/alacritty/alacritty.toml'
 alias sourceall='xmodmap ~/.xmodmap; tmux source-file ~/.tmux.conf; source ~/.config/fish/config.fish'
 alias gpuwatch='watch -n1 "cat /sys/class/drm/card0/device/hwmon/hwmon2/power1_average"'
 alias blender_safe='hsa_disable_sdma=1 hip_visible_devices=0 rocr_visible_devices=0 /home/jan/apps/blender/blender --factory-startup'
-alias notes='cd ~/pl/qwertus/autotodo; cargo run ../notes.md data/patterns.ron; hx ~/pl/qwertus/notes.md'
+alias notes='cd ~/pirate/notes; cargo run todos.md; hx todos.md knowledge.md'
 alias promptnotes='hx ~/pl/qwertus/promptnotes.md'
 alias catpromptnotes='cat ~/pl/qwertus/promptnotes.md'
 alias geppetto='firefox chatgpt.com'
@@ -43,9 +44,10 @@ alias steamconsole='steam steam://open/console/'
 alias capstoggle='xdotool key Caps_Lock'
 alias dudidadaa='paplay ~/Music/trash_jazz.wav'
 alias gotofile='z (dirname (fzf))'
-alias fuck='fix'
 alias calc='qalc'
 alias print='lp -d HP_Color_LaserJet_MFP_M283fdw_D03F69'
+
+alias git_brains_sync="~/pirate/scripts/sync-mary-brains.fish"
 
 set -x HELIX_RUNTIME /home/jan/.config/helix/runtime
 set -x SCENERY_LIB_PATH /home/jan/pl/scenery/lib
@@ -71,13 +73,12 @@ fish_add_path /home/jan/.local/bin
 fish_add_path /home/jan/scripts
 fish_add_path /home/jan/apps/cool-retro-term
 fish_add_path /usr/games
+fish_add_path /home/jan/.opencode/bin
 
 if status is-interactive
+    setxkbmap us -variant altgr-intl
     xmodmap ~/.xmodmap
+    tmux source-file ~/.tmux.conf
 
     fish_vi_key_bindings
-
-    fastfetch --logo-type command-raw --logo "fortune | pandasay --res 64"
-    zoxide init fish | source
-    fixit init fish | source
 end
