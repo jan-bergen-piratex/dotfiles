@@ -1,0 +1,178 @@
+#!/usr/bin/env python3
+import json
+import subprocess
+import sys
+import time
+from datetime import datetime
+from html import escape
+
+REFRESH_SECONDS = 60
+I3STATUS_CONFIG = "/home/jan/.config/i3status/config"
+YELLOW = "#ffff00"
+RED = "#ff0000"
+GREEN = "#00ff00"
+CODEX = "🧠"
+SPARK = "✨"
+CODEX_MIN_WIDTH = 380
+
+
+def rpc_call():
+    proc = subprocess.Popen(
+        ["codex", "app-server"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        text=True,
+    )
+
+    def send(message):
+        proc.stdin.write(json.dumps(message) + "\n")
+        proc.stdin.flush()
+
+    send({
+        "id": 0,
+        "method": "initialize",
+        "params": {
+            "clientInfo": {
+                "name": "jan_i3_status",
+                "title": "Jan i3 Status",
+                "version": "0.1.0",
+            },
+            "capabilities": {"experimentalApi": True},
+        },
+    })
+    send({"method": "initialized", "params": {}})
+    send({"id": 1, "method": "account/rateLimits/read", "params": None})
+
+    deadline = time.time() + 20
+    result = None
+    while time.time() < deadline:
+        line = proc.stdout.readline()
+        if not line:
+            break
+        msg = json.loads(line)
+        if msg.get("id") == 1:
+            result = msg.get("result")
+            break
+
+    proc.terminate()
+    try:
+        proc.wait(timeout=2)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+
+    return result
+
+
+def fmt_until(ts):
+    if not ts:
+        return "?"
+    dt = datetime.fromtimestamp(ts)
+    now = datetime.now()
+    if dt.date() == now.date():
+        return dt.strftime("%H:%M")
+    return dt.strftime("%d.%m. %H:%M")
+
+
+def fmt_weekday(ts):
+    if not ts:
+        return "?"
+    return datetime.fromtimestamp(ts).strftime("%a %H:%M")
+
+
+def remaining(limit):
+    primary = limit.get("primary") or {}
+    secondary = limit.get("secondary") or {}
+    primary_left = max(0, 100 - int(primary.get("usedPercent") or 0))
+    secondary_left = max(0, 100 - int(secondary.get("usedPercent") or 0))
+    return primary, secondary, primary_left, secondary_left
+
+
+def color_for_percent(left):
+    if left < 10:
+        return RED
+    if left < 25:
+        return YELLOW
+    return GREEN
+
+
+def fmt_percent(left, prefix=""):
+    return f'{escape(prefix)}<span foreground="{color_for_percent(left)}">{left}%</span>'
+
+
+def fmt_limit(limit, prefix=""):
+    primary, secondary, primary_left, secondary_left = remaining(limit)
+    return (
+        f"{fmt_percent(primary_left, prefix)} {fmt_until(primary.get('resetsAt'))}"
+        f" | {fmt_percent(secondary_left, prefix)} {fmt_weekday(secondary.get('resetsAt'))}"
+    )
+
+
+def block(text, name):
+    return {
+        "full_text": text,
+        "name": name,
+        "markup": "pango",
+        "min_width": CODEX_MIN_WIDTH,
+        "align": "center",
+    }
+
+
+def get_codex_blocks():
+    result = rpc_call()
+    limits = (result or {}).get("rateLimitsByLimitId") or {}
+    codex = limits.get("codex") or (result or {}).get("rateLimits")
+    spark = limits.get("codex_bengalfox")
+
+    blocks = []
+    parts = []
+    if codex:
+        parts.append(fmt_limit(codex, CODEX))
+
+    if spark:
+        primary = spark.get("primary") or {}
+        secondary = spark.get("secondary") or {}
+        touched = (primary.get("usedPercent") or 0) > 0 or (secondary.get("usedPercent") or 0) > 0
+        if touched:
+            parts.append(fmt_limit(spark, SPARK))
+
+    if parts:
+        blocks.append(block(" | ".join(parts), "codex"))
+
+    return blocks
+
+
+def main():
+    proc = subprocess.Popen(["i3status", "-c", I3STATUS_CONFIG], stdout=subprocess.PIPE, text=True)
+    last_fetch = 0
+    cached_blocks = [{"full_text": "Codex ?", "name": "codex"}]
+
+    for line in proc.stdout:
+        if line.startswith('{"version"') or line.strip() == "[":
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            continue
+
+        prefix = "," if line.startswith(",") else ""
+        payload = line[1:] if prefix else line
+
+        try:
+            status_blocks = json.loads(payload)
+        except json.JSONDecodeError:
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            continue
+
+        if time.time() - last_fetch >= REFRESH_SECONDS:
+            try:
+                cached_blocks = get_codex_blocks()
+            except Exception:
+                cached_blocks = [{"full_text": "Codex ?", "name": "codex"}]
+            last_fetch = time.time()
+
+        sys.stdout.write(prefix + json.dumps(cached_blocks + status_blocks) + "\n")
+        sys.stdout.flush()
+
+
+if __name__ == "__main__":
+    main()
