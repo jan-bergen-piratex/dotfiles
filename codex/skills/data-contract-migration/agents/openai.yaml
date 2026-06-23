@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Contract Migration"
+  short_description: "Block stale JSONL/schema resumes"
+  default_prompt: "Use $data-contract-migration to compare this pipeline's current schema to existing outputs before resuming or appending."

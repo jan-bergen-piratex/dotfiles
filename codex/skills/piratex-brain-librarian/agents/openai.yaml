@@ -1,0 +1,4 @@
+interface:
+  display_name: "Piratex Brain Librarian"
+  short_description: "Curate piratex-brain and Mary documentation"
+  default_prompt: "Use $piratex-brain-librarian to audit and deduplicate the Mary documentation without broad rewrites."

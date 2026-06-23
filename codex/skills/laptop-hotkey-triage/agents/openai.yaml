@@ -1,0 +1,4 @@
+interface:
+  display_name: "Laptop Hotkey Triage"
+  short_description: "Check accidental Lenovo Fn toggles first"
+  default_prompt: "Use $laptop-hotkey-triage to diagnose a laptop hardware feature that suddenly stopped working."

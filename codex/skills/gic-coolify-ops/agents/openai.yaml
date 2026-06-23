@@ -1,0 +1,4 @@
+interface:
+  display_name: "GIC Coolify Ops"
+  short_description: "Operate GIC legacy and Next.js/Coolify deployment safely."
+  default_prompt: "Use this when working on GIC deployment, backup, Coolify, all-inkl, or GitHub Actions CD."

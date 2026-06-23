@@ -1,0 +1,31 @@
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+approvals_reviewer = "user"
+plan_mode_reasoning_effort = "xhigh"
+[projects."/home/jan/pirate"]
+trust_level = "trusted"
+
+[projects."/home/jan"]
+trust_level = "trusted"
+
+[projects."/home/jan/pirate/gic"]
+trust_level = "trusted"
+
+[projects."/home/jan/pirate/autotodo"]
+trust_level = "trusted"
+
+[projects."/home/jan/pirate/gic-nextjs"]
+trust_level = "trusted"
+
+[projects."/tmp"]
+trust_level = "trusted"
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir"]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[notice.model_migrations]
+"gpt-5.4" = "gpt-5.5"

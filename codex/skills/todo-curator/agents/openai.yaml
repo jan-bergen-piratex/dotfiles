@@ -1,0 +1,4 @@
+interface:
+  display_name: "Todo Curator"
+  short_description: "Curate Jan's todo list cleanly"
+  default_prompt: "Use $todo-curator to clean up my todo list without losing context."

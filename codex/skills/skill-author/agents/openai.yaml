@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Author"
+  short_description: "Create high-quality reusable skills"
+  default_prompt: "Use $skill-author to turn this repeated workflow into a compact, tested skill."

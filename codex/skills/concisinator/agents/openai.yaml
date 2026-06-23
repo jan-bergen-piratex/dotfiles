@@ -1,0 +1,5 @@
+interface:
+  display_name: "Concisinator"
+  short_description: "Compress docs and remove rhetorical slop"
+  default_prompt: "Use $concisinator regular deslopifier to rewrite this text so it is shorter, clearer, and keeps the substance."
+

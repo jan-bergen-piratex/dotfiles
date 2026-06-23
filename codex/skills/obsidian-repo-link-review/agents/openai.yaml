@@ -1,0 +1,4 @@
+interface:
+  display_name: "Obsidian Repo Link Review"
+  short_description: "Resolve Obsidian repo links and summarize the referenced file."
+  default_prompt: "Review this Obsidian repo link: obsidian://open?vault=Tech%20Brain&file=path%2Fto%2Ffile"

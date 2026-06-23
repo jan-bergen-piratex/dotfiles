@@ -1,0 +1,4 @@
+interface:
+  display_name: "Initialize Night Worker"
+  short_description: "Start the tmux night todo runner"
+  default_prompt: "Use $initialize-night-worker to start the overnight todo runner in tmux."

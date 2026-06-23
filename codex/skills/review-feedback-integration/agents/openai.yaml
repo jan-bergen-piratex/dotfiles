@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Feedback Integration"
+  short_description: "Turn corrections into verified durable fixes"
+  default_prompt: "Use $review-feedback-integration to integrate this feedback into prompts, heuristics, regression tests, docs, and memory decisions."

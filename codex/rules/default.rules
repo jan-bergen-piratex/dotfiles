@@ -1,0 +1,32 @@
+prefix_rule(pattern=["cargo", "check"], decision="allow")
+prefix_rule(pattern=["find", "src", "-maxdepth", "2", "-type", "f"], decision="allow")
+prefix_rule(pattern=["wc", "-l", "src/phase2.rs", "src/main.rs", "src/phase1.rs"], decision="allow")
+prefix_rule(pattern=["sed", "-n", "src/phase2.rs"], decision="allow")
+prefix_rule(pattern=["cargo", "fmt"], decision="allow")
+prefix_rule(pattern=["cargo", "run", "--quiet", "--", "phase3", "--phase1-dir", "data/phase1", "--phase2-dir", "data/phase2", "--out", "/tmp/omclub-phase3-lean", "--contact-limit", "1", "--dry-run", "--no-resume", "--verbosity", "quiet"], decision="allow")
+prefix_rule(pattern=["grep", "-R", "message_id", "-n", "src/phase4.rs", "src/types.rs"], decision="allow")
+prefix_rule(pattern=["grep", "-o", "\"direction\":\"[^\"]*\"", "data/phase1/phase1_message_events.jsonl"], decision="allow")
+prefix_rule(pattern=["grep", "-R", "emit_csv", "-n", "src/main.rs", "src/types.rs", "src/phase2.rs", "src/phase4.rs"], decision="allow")
+prefix_rule(
+    pattern = ["sed", "-n"],
+    decision = "allow",
+    justification = "sed -n is print-only, never modifies files",
+    match = [
+        "sed -n '1,180p' src/model_worker.rs",
+        "sed -n '50,100p' Cargo.toml",
+    ],
+    not_match = [
+        "sed -i 's/foo/bar/' file.rs",  # won't match, uses -i not -n
+    ],
+)
+prefix_rule(pattern=["/bin/bash", "-lc", "GIT_SSH_COMMAND='ssh -F /dev/null' git fetch origin"], decision="allow")
+prefix_rule(pattern=["mkdir", "-p", "/home/jan/.codex/codex-notes"], decision="allow")
+prefix_rule(pattern=["ssh", "-F", "/dev/null", "redbeard@37.120.166.157", "git"], decision="allow")
+prefix_rule(pattern=["gh", "run", "list"], decision="allow")
+prefix_rule(pattern=["ssh", "-F", "/dev/null", "redbeard@37.120.166.157", "set -e; cd /opt/trypost; docker compose up -d; docker compose ps; docker compose logs --no-color --tail 120"], decision="allow")
+prefix_rule(pattern=["git", "-C", "/home/jan/pirate/gic-nextjs"], decision="allow")
+prefix_rule(pattern=["ssh", "-F", "/dev/null", "-i", "/home/jan/.ssh/id_ed25519_gic_allinkl"], decision="allow")
+prefix_rule(pattern=["git", "-C", "/home/jan/pirate/omclub.de"], decision="allow")
+prefix_rule(pattern=["ssh", "-F", "/dev/null", "redbeard@37.120.166.157"], decision="allow")
+prefix_rule(pattern=["curl", "-fsS"], decision="allow")
+prefix_rule(pattern=["node", "--input-type=module"], decision="allow")

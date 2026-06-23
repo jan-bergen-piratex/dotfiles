@@ -1,0 +1,7 @@
+interface:
+  display_name: "Sendy all-inkl Export"
+  short_description: "Export Sendy contacts from all-inkl DB"
+  default_prompt: "Use $sendy-allinkl-export to create a clean Sendy contact CSV for the requested audience."
+
+policy:
+  allow_implicit_invocation: true

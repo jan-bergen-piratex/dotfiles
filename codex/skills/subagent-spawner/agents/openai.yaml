@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent Spawner"
+  short_description: "Decide when and how to delegate to subagents"
+  default_prompt: "Use $subagent-spawner to split this task into useful subagent work without over-delegating."

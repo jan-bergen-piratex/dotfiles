@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generated Pipeline Scaffold"
+  short_description: "Scaffold recoverable generated-data pipelines"
+  default_prompt: "Use $generated-pipeline-scaffold to create a phase-based generated data or LLM pipeline with prompts, schemas, smoke tests, README commands, and output contracts."

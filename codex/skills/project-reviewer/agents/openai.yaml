@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Reviewer"
+  short_description: "Independent project reviews with task-fit output"
+  default_prompt: "Use $project-reviewer to give an independent review of this project and choose the response format that is most useful."

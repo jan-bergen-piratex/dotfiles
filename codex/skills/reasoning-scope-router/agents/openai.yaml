@@ -1,0 +1,7 @@
+interface:
+  display_name: "Reasoning Scope Router"
+  short_description: "Route planning depth and delegation"
+  default_prompt: "Use $reasoning-scope-router to decide how much planning, tooling, and delegation this task needs."
+
+policy:
+  allow_implicit_invocation: true

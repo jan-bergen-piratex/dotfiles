@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt QA"
+  short_description: "Audit prompts, outputs, schemas, and evidence"
+  default_prompt: "Use $prompt-qa to audit this prompt and output for bias, schema drift, and evidence artifacts."

@@ -1,0 +1,15 @@
+## cleanup/repo-size...origin/cleanup/repo-size [gone]
+ M .github/workflows/deploy.yml
+ M astro.config.mjs
+ M eslint.config.js
+ M package-lock.json
+ M package.json
+ M public/mailer.php
+ M public/token.php
+ D src/components/ui/button.tsx
+ M src/layouts/Layout.astro
+ M src/lib/utils.ts
+ D src/test/setup.ts
+ M src/test/utils.test.ts
+ M tsconfig.json
+ M vitest.config.ts

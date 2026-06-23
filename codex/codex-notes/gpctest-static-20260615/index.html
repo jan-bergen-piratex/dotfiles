@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Application for studios and startups | gamescom iframe test</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      body {
+        margin: 0;
+        background: #fff;
+        color: #111;
+        font-family:
+          Arial,
+          Helvetica Neue,
+          Helvetica,
+          sans-serif;
+      }
+
+      main {
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 32px 16px;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        margin-bottom: 24px;
+        font-size: 14px;
+      }
+
+      a {
+        color: #111;
+      }
+
+      .gc-iframe {
+        display: block;
+        width: 100%;
+        aspect-ratio: 2 / 3;
+        border: 0;
+      }
+
+      @media (max-width: 767px) {
+        main {
+          padding-inline: 0;
+        }
+
+        nav {
+          padding-inline: 16px;
+        }
+
+        .gc-iframe {
+          aspect-ratio: 1 / 9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="GIC iframe test pages">
+        <strong>Studios and startups</strong>
+        <a href="/investor.html">Investor</a>
+      </nav>
+
+      <iframe
+        class="gc-iframe"
+        src="https://gpc.piratex.com/apply?embed=true"
+        title="Application for studios and startups"
+      ></iframe>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+- GIC deployment: if configuring email/log recipient later, `admin@piratex.com` is the address to receive logs. Do not apply this automatically unless user asks.
+- Jan uses Fish as his interactive shell. When giving Jan commands or writing scripts for him to execute, prefer Fish syntax. For Codex's own tool calls, do not wrap simple commands in `fish -lc`; execute the command directly unless Fish-specific syntax or a Fish script is actually needed.

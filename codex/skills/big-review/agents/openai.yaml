@@ -1,0 +1,4 @@
+interface:
+  display_name: "Big Project Review"
+  short_description: "Multi-angle project review with subagents"
+  default_prompt: "Use $big-review to review this project from multiple angles with one subagent per angle."

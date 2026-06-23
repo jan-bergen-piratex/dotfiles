@@ -1,0 +1,4 @@
+interface:
+  display_name: "Use Spark"
+  short_description: "Delegate bounded big-work tasks to Codex Spark subagents and save main-agent tokens."
+  default_prompt: "Use Spark for the big work parts of this task while preserving main-session context and keeping the main thread light."

@@ -1,0 +1,3 @@
+interface:
+  display_name: "Session Todo Sync"
+  short_description: "Ask another Codex session for todo evidence, then curate todos locally."

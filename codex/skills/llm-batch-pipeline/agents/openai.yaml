@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Batch Pipeline"
+  short_description: "Resumable JSONL state for LLM batch jobs"
+  default_prompt: "Use $llm-batch-pipeline to design a resumable JSONL state and validation plan for this LLM batch job."

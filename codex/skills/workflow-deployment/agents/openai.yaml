@@ -1,0 +1,5 @@
+interface:
+  display_name: "Workflow Deployment"
+  short_description: "Deploy workflow docs into Mary/Hermes safely"
+  default_prompt: "Use $workflow-deployment to deploy this workflow package and verify the runtime mirror."
+

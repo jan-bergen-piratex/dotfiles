@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mary Website Scope"
+  short_description: "Add a website repository to Mary safely."
+  default_prompt: "Add a new website repo to Mary scope."
