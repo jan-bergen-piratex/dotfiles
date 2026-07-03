@@ -6,9 +6,5 @@ import = [
 [font]
 size = 10.0
 
-[font.offset]
-y = -3
-
 [font.normal]
 family = "Noto Sans Mono"
-

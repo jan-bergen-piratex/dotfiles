@@ -1,3 +1,4 @@
+
 theme = "gruvbox"
 
 [editor]
@@ -74,6 +75,7 @@ i = "jump_forward"
 [keys.normal.'A-q']
 u = "@miwb; u"
 l = '@ms.ms.ms"'
+d = '@<esc><home>f[lrx'
 
 [keys.normal.z]
 C-f = 'no_op'

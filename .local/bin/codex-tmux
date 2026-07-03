@@ -1,0 +1,26 @@
+#!/usr/bin/env fish
+
+set -l session
+
+if test (count $argv) -gt 0
+    if test "$argv[1]" = "-h"; or test "$argv[1]" = "--help"
+        echo "usage: codex-tmux [session-name] [initial-prompt]"
+        echo "default session-name: current tmux window name"
+        exit 0
+    end
+
+    set session $argv[1]
+    set -e argv[1]
+else if set -q TMUX
+    set session (tmux display-message -p -t "$TMUX_PANE" '#W' 2>/dev/null)
+end
+
+if test -z "$session"
+    echo "codex-tmux: pass a session name or run inside tmux" >&2
+    exit 2
+end
+
+# `codex resume` filters by cwd unless `--all` is set. Use the session name
+# plus full-session search so tmux window name works from any directory.
+# Restored tmux Codex sessions should resume in yolo mode.
+exec codex resume --all --dangerously-bypass-approvals-and-sandbox "$session" $argv
