@@ -2,7 +2,7 @@
 
 Date: 2026-06-08
 
-Repo: `/home/jan/pirate/gic-nextjs`
+Repo: `/home/redbeard/pirate/gic-nextjs`
 Live URL: `https://gpc.piratex.com`
 Deploy path: `main` -> direct Coolify auto-deploy
 

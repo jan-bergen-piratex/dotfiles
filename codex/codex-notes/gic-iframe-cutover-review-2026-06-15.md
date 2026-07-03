@@ -68,7 +68,7 @@ After F1, test exact old Gamescom iframe behavior before deciding whether height
 
 ## Relevant Files
 
-- `/home/jan/pirate/gic-nextjs/src/middleware.ts`
-- `/home/jan/pirate/gic-nextjs/next.config.mjs`
-- `/home/jan/pirate/gic-nextjs/docs/iframe-embed-integration.md`
+- `/home/redbeard/pirate/gic-nextjs/src/middleware.ts`
+- `/home/redbeard/pirate/gic-nextjs/next.config.mjs`
+- `/home/redbeard/pirate/gic-nextjs/docs/iframe-embed-integration.md`
 

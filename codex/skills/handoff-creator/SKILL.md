@@ -35,13 +35,13 @@ Do not scatter handoffs.
 
 Choose the narrowest durable home:
 - Project repo handoff for active engineering work: project-local docs/backlog/handoff area if one already exists.
-- Jan personal pickup or cross-repo handoff: `/home/jan/pirate/notes/prompt_files/` only if it is a prompt, otherwise ask before writing to notes.
+- Jan personal pickup or cross-repo handoff: `/home/redbeard/pirate/notes/prompt_files/` only if it is a prompt, otherwise ask before writing to notes.
 - Tech-brain/Mary/Hermes architecture handoff: `tech-brain` only when Jan clearly asks or the work already lives there.
 - Piratex-brain knowledge handoff: `piratex-brain/00_Inbox/` only when it is genuinely company-brain intake; otherwise do not put operational tasks there.
-- Temporary Codex-only memory: `/home/jan/.codex/codex-notes`.
+- Temporary Codex-only memory: `/home/redbeard/.codex/codex-notes`.
 
 If the target location is unclear and writing to a shared repo would matter,
-ask Jan or draft in `/home/jan/.codex/codex-notes` and say it has not been
+ask Jan or draft in `/home/redbeard/.codex/codex-notes` and say it has not been
 promoted.
 
 ## Content Contract

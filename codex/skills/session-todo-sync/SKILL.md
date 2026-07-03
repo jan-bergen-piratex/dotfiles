@@ -8,7 +8,7 @@ description: "Use when Jan wants Codex to ask another running Codex/tmux session
 ## Rule
 
 Remote sessions are evidence providers only. They must not edit
-`/home/jan/pirate/notes/todos.md`, project files, or shared brain files as part
+`/home/redbeard/pirate/notes/todos.md`, project files, or shared brain files as part
 of a todo-sync request.
 
 The current main session owns interpretation and todo edits. If todos need to be
@@ -83,7 +83,7 @@ this session after reading the remote report.
 
 7. Curate todos locally.
    - Use `todo-curator`.
-   - Edit `/home/jan/pirate/notes/todos.md` only from this main session.
+   - Edit `/home/redbeard/pirate/notes/todos.md` only from this main session.
    - Mark old renamed/merged wording `[q]`.
    - Check off only items backed by explicit evidence or Jan's statement.
    - Keep still-open project work active even if setup or a subpart is done.
@@ -104,7 +104,7 @@ Use this shape and adapt the project name:
 Read this request read-only. Do not edit files.
 
 We are syncing Jan's todo state for <project/session>. The todo file is
-/home/jan/pirate/notes/todos.md. Assume Jan may be behind in checking items off.
+/home/redbeard/pirate/notes/todos.md. Assume Jan may be behind in checking items off.
 
 Please inspect broadly:
 - the relevant repo/docs/runtime state for your project

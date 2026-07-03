@@ -28,8 +28,8 @@ This file records Jan's local working setup for Codex sessions.
 - Prefer simple CLI tools, tmux orchestration, SQLite/files, short-lived
   processes, and explicit start/stop commands for local personal tooling.
 - Cross-session Codex communication uses the lightweight file bus at
-  `/home/jan/pirate/notes/session-bus`, operated by
-  `/home/jan/pirate/notes/scripts/session-bus.fish` or `session-bus`.
+  `/home/redbeard/pirate/notes/session-bus`, operated by
+  `/home/redbeard/pirate/notes/scripts/session-bus.fish` or `session-bus`.
   It is for messages and artifacts only. It must not kill, respawn, or manage
   tmux panes automatically.
 - Do not infer whether a Codex pane is ready from `tmux capture-pane` text.

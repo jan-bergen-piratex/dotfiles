@@ -9,15 +9,15 @@ Use this skill to get oriented fast and avoid rediscovering the OMClub runtime.
 
 ## First Reads
 
-1. Read `/home/jan/.codex/codex-notes/omclub-website-investigation.md`.
+1. Read `/home/redbeard/.codex/codex-notes/omclub-website-investigation.md`.
 2. If working on live behavior, inspect current production files before trusting old notes.
-3. If working on source changes, first locate the actual OMClub website source repo. `/home/jan/pirate/piratex.com` is not the booking app source; it only contains OMClub case-study/content references.
+3. If working on source changes, first locate the actual OMClub website source repo. `/home/redbeard/pirate/piratex.com` is not the booking app source; it only contains OMClub case-study/content references.
 
 ## Live Access
 
 - SSH host: `w010c8ea.kasserver.com`
 - SSH user: `ssh-w010c8ea`
-- SSH key: `/home/jan/.ssh/id_ed25519_gic_allinkl`
+- SSH key: `/home/redbeard/.ssh/id_ed25519_gic_allinkl`
 - Web root: `/www/htdocs/w010c8ea/web/omclub.de`
 - Logs: `/www/htdocs/w010c8ea/logs/access_log_omclub_de_YYYY-MM-DD.gz`
 
@@ -25,7 +25,7 @@ SSH pattern:
 
 ```bash
 ssh -F /dev/null \
-  -i /home/jan/.ssh/id_ed25519_gic_allinkl \
+  -i /home/redbeard/.ssh/id_ed25519_gic_allinkl \
   -o IdentitiesOnly=yes \
   -o BatchMode=yes \
   -o ConnectTimeout=10 \

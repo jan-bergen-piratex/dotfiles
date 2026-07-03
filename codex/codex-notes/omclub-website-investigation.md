@@ -8,7 +8,7 @@ Scope: `https://omclub.de/booking/` booking failures. Investigation only. No pro
 
 - Live host: All-Inkl SSH.
 - SSH command pattern:
-  `ssh -F /dev/null -i /home/jan/.ssh/id_ed25519_gic_allinkl -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 -p 22 ssh-w010c8ea@w010c8ea.kasserver.com`
+  `ssh -F /dev/null -i /home/redbeard/.ssh/id_ed25519_gic_allinkl -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 -p 22 ssh-w010c8ea@w010c8ea.kasserver.com`
 - Live web root: `/www/htdocs/w010c8ea/web/omclub.de`
 - Logs: `/www/htdocs/w010c8ea/logs/access_log_omclub_de_YYYY-MM-DD.gz`
 
@@ -70,12 +70,12 @@ Scope: `https://omclub.de/booking/` booking failures. Investigation only. No pro
 
 ## Source Ownership Status
 
-- Source repo was later identified and cloned to `/home/jan/pirate/omclub.de`.
+- Source repo was later identified and cloned to `/home/redbeard/pirate/omclub.de`.
 - Remote: `git@github.com:PIRATEglobal/omclub.de.git`.
 - Branch: `main`, clean at `c792883fcf5cfb446909448823805211fc9b0936`.
 - This is the OMClub booking source repo. It contains Astro source, tests, GitHub Actions deploy, All-Inkl PHP endpoints, Apps Script docs, and checkout components.
 - Accessible local repos are `gic`, `gic-nextjs`, `piratex.com`, `tech-brain`, `piratex-brain`, `ondeck`, and `resonance`.
-- `/home/jan/pirate/piratex.com` is not the OMClub booking app source. It only has OMClub references in PIRATEx content and case studies.
+- `/home/redbeard/pirate/piratex.com` is not the OMClub booking app source. It only has OMClub references in PIRATEx content and case studies.
 - GitHub CLI visibility from this session does not include PIRATEx private repos beyond the local clones. It can see Jan's personal `obsidian-test` and public Manusco repos, but not an OMClub source repo.
 - `tech-brain/ops/company-architecture-security-inventory.md` already lists `omclub.de` as a domain whose live DNS, hosting, deployment path, and ownership were not verified in that earlier pass. This investigation verifies live hosting/path, but not source repo ownership.
 - Live `.ftp-deploy-sync-state.json` and source `.github/workflows/deploy.yml` match: GitHub Actions builds `dist/` and deploys to All-Inkl `server-dir: /omclub.de/`.

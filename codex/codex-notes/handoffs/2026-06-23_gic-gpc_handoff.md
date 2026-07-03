@@ -9,7 +9,7 @@ time: 11:59 Europe/Berlin
 
 GIC/GPC Next.js/Payload rebuild and Coolify runtime.
 
-- Repo: `/home/jan/pirate/gic-nextjs`
+- Repo: `/home/redbeard/pirate/gic-nextjs`
 - GitHub: `PIRATEglobal/gic-nextjs`
 - Runtime: Next.js 16, React 19, Payload 3, SQLite
 - Hosting: Coolify on Jack VPS
@@ -87,7 +87,7 @@ Important commits visible locally:
   - Restic binary on Jack: `/home/redbeard/bin/restic`
   - Restic password locations, no values:
     - Jack: `/home/redbeard/.config/gic-nextjs/restic-password`
-    - local recovery copy: `/home/jan/.config/gic-nextjs/restic-password`
+    - local recovery copy: `/home/redbeard/.config/gic-nextjs/restic-password`
   - Nightly cron on Jack:
     `41 2 * * * flock -n /tmp/gic-nextjs-restic-backup.lock /opt/jack-cron-jobs/gic-nextjs-restic-backup.sh >> /opt/jack-cron-jobs/gic-nextjs-restic-backup.log 2>&1 # gic-nextjs-restic-backup:jack`
 - Runtime secrets are in Coolify env, not repo docs. Do not print or commit
@@ -114,7 +114,7 @@ Important commits visible locally:
 This was synced in:
 
 ```text
-/home/jan/pirate/notes/session-bus/sessions/gic/outbox/2026-06-23T06-52-21Z_gic_response.md
+/home/redbeard/pirate/notes/session-bus/sessions/gic/outbox/2026-06-23T06-52-21Z_gic_response.md
 ```
 
 Recommended canonical GIC/GPC block from that sync:
@@ -132,7 +132,7 @@ Recommended canonical GIC/GPC block from that sync:
   - [ ] gic coolify ops skill splitten
 ```
 
-Do not edit `/home/jan/pirate/notes/todos.md` unless Jan explicitly asks. It
+Do not edit `/home/redbeard/pirate/notes/todos.md` unless Jan explicitly asks. It
 contains many stale rolled-forward GIC aliases; use the sync report above when
 curating it.
 
@@ -199,17 +199,17 @@ curating it.
 
 ## Read First For Next Session
 
-1. `/home/jan/.codex/SOUL.md`
-2. `/home/jan/pirate/gic-nextjs/AGENTS.md`
-3. `/home/jan/pirate/gic-nextjs/AGENTS-GIC-OPS.md`
+1. `/home/redbeard/.codex/SOUL.md`
+2. `/home/redbeard/pirate/gic-nextjs/AGENTS.md`
+3. `/home/redbeard/pirate/gic-nextjs/AGENTS-GIC-OPS.md`
 4. This file:
-   `/home/jan/pirate/gic-nextjs/docs/handovers/260623_new_device_gic_gpc_handoff.md`
+   `/home/redbeard/pirate/gic-nextjs/docs/handovers/260623_new_device_gic_gpc_handoff.md`
 5. Todo sync report:
-   `/home/jan/pirate/notes/session-bus/sessions/gic/outbox/2026-06-23T06-52-21Z_gic_response.md`
+   `/home/redbeard/pirate/notes/session-bus/sessions/gic/outbox/2026-06-23T06-52-21Z_gic_response.md`
 6. Runtime state:
-   `/home/jan/pirate/tech-brain/ops/gic-current-state.md`
+   `/home/redbeard/pirate/tech-brain/ops/gic-current-state.md`
 7. Deploy handoff:
-   `/home/jan/pirate/gic-nextjs/docs/coolify-cd-status.md`
+   `/home/redbeard/pirate/gic-nextjs/docs/coolify-cd-status.md`
 8. Attachment/migration handoffs:
    - `docs/handovers/260616_manuel_gic_handover.md`
    - `docs/handovers/260617_missing_attachment_recovery_agent_handoff.md`
@@ -221,8 +221,8 @@ curating it.
 Read-only/local:
 
 ```bash
-git -C /home/jan/pirate/gic-nextjs status --short --branch
-git -C /home/jan/pirate/gic-nextjs log --oneline --decorate --max-count=25 --all
+git -C /home/redbeard/pirate/gic-nextjs status --short --branch
+git -C /home/redbeard/pirate/gic-nextjs log --oneline --decorate --max-count=25 --all
 curl -fsS https://gpc.piratex.com/api/health
 curl -fsS https://gic.piratex.com/api/health
 curl -fsS -I -L 'https://gic.piratex.com/apply?embed=true'
@@ -232,7 +232,7 @@ curl -fsS -I 'https://gic.piratex.com/internal'
 Verification before merge/deploy:
 
 ```bash
-cd /home/jan/pirate/gic-nextjs
+cd /home/redbeard/pirate/gic-nextjs
 npm run lint
 npm run typecheck
 npm run test:run
@@ -242,7 +242,7 @@ npm run build
 Production backup before risky work:
 
 ```bash
-cd /home/jan/pirate/gic-nextjs
+cd /home/redbeard/pirate/gic-nextjs
 npm run live:backup:restic
 ```
 

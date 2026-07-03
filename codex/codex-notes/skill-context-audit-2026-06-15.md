@@ -7,13 +7,13 @@ Date: 2026-06-15
 Reduced active Codex skills from 73 to 42. Archived skills were moved, not deleted. Active skill descriptions were shortened to trigger-only text.
 
 Validation result: all active skills passed
-`/home/jan/.codex/skills/.system/skill-creator/scripts/quick_validate.py`
+`/home/redbeard/.codex/skills/.system/skill-creator/scripts/quick_validate.py`
 when run through `python3`.
 
 Archive location:
 
 ```text
-/home/jan/.codex/skills.disabled/2026-06-15
+/home/redbeard/.codex/skills.disabled/2026-06-15
 ```
 
 ## Archived Skills
@@ -94,10 +94,10 @@ Archive location:
 
 ## Restore
 
-To restore one archived skill, move its directory back into `/home/jan/.codex/skills`. Example:
+To restore one archived skill, move its directory back into `/home/redbeard/.codex/skills`. Example:
 
 ```bash
-mv /home/jan/.codex/skills.disabled/2026-06-15/resonance-engineering-frontend /home/jan/.codex/skills/
+mv /home/redbeard/.codex/skills.disabled/2026-06-15/resonance-engineering-frontend /home/redbeard/.codex/skills/
 ```
 
 ## Notes

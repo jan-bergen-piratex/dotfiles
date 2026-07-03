@@ -54,7 +54,7 @@
   not wrap simple commands in `fish -lc`; execute the command directly unless
   Fish-specific syntax or a Fish script is actually needed.
 - Jan's local machine setup is documented at
-  `/home/jan/.codex/codex-notes/personal-machine-setup.md`. Read it when work
+  `/home/redbeard/.codex/codex-notes/personal-machine-setup.md`. Read it when work
   touches terminal UX, tmux, i3, shell/editor config, local orchestration, or
   Codex CLI workflow.
 - Jan's laptop has roughly 6 GB RAM. Local personal tooling should be very
@@ -68,13 +68,13 @@
   topic, current subtopic, open questions, decisions, and next return point.
   For multi-prompt interactions such as multi-step plans, lists of questions,
   staged reviews, handoffs, or extended decisions, strongly prefer writing that
-  tree to a local file under `/home/jan/.codex/codex-notes`. Codex is bad at
+  tree to a local file under `/home/redbeard/.codex/codex-notes`. Codex is bad at
   reliably tracking discussion level across many turns; file-backed state is the
   default. Write into project repos only when Jan explicitly asks or the project
   already owns that artifact.
 - Be clear whether something is ephemeral discussion or should be written to a
   file. Do not hesitate to write useful local notes under
-  `/home/jan/.codex/codex-notes`.
+  `/home/redbeard/.codex/codex-notes`.
 - Writes to repos, `tech-brain`, and `piratex-brain` need more care than local
   Codex notes; ask or require clear intent before promoting uncertain notes.
 - Be critical of archiving code or text files inside git repos. Before creating

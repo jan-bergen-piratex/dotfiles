@@ -19,7 +19,7 @@ push reviewable items into OnDeck.
 
 ## Verified Current Repo State
 
-- Repo: `/home/jan/pirate/ondeck`
+- Repo: `/home/redbeard/pirate/ondeck`
 - Branch: `wip/hitl-docs-on-main`
 - Remote tracking branch: `origin/wip/hitl-docs-on-main`
 - Current HEAD: `ed404b7 docs: align live code with hitl boundary`
@@ -43,24 +43,24 @@ Important dirty changes include:
   - `src/views/TriageView.tsx`
   - `src/archetypes/CorrectForm.tsx`
   - `src/archetypes/ApproveGate.tsx`
-- Scratch/current todo file in repo: `/home/jan/pirate/ondeck/agents-todos.md`
+- Scratch/current todo file in repo: `/home/redbeard/pirate/ondeck/agents-todos.md`
 
 ## Canon To Read First
 
 Read in this order:
 
-1. `/home/jan/pirate/ondeck/docs/generic-jobs-platform.md`
-2. `/home/jan/pirate/ondeck/backend/API.md`
-3. `/home/jan/pirate/ondeck/agents-todos.md`
-4. `/home/jan/pirate/ondeck/src/lib/deriveJobs.ts`
-5. `/home/jan/pirate/ondeck/src/archetypes/JobsView.tsx`
-6. `/home/jan/pirate/ondeck/src/archetypes/JobReviewQueueView.tsx`
-7. `/home/jan/pirate/ondeck/src/views/TriageView.tsx`
+1. `/home/redbeard/pirate/ondeck/docs/generic-jobs-platform.md`
+2. `/home/redbeard/pirate/ondeck/backend/API.md`
+3. `/home/redbeard/pirate/ondeck/agents-todos.md`
+4. `/home/redbeard/pirate/ondeck/src/lib/deriveJobs.ts`
+5. `/home/redbeard/pirate/ondeck/src/archetypes/JobsView.tsx`
+6. `/home/redbeard/pirate/ondeck/src/archetypes/JobReviewQueueView.tsx`
+7. `/home/redbeard/pirate/ondeck/src/views/TriageView.tsx`
 
 Older handovers:
 
-- `/home/jan/pirate/ondeck/docs/handovers/260619_handover.md`
-- `/home/jan/pirate/ondeck/docs/handovers/260620_handover.md`
+- `/home/redbeard/pirate/ondeck/docs/handovers/260619_handover.md`
+- `/home/redbeard/pirate/ondeck/docs/handovers/260620_handover.md`
 
 Those older handovers document the security/generic-context branch history, but
 some lead-pipeline assumptions in old docs are superseded by the current HITL
@@ -148,7 +148,7 @@ Current useful archetype direction:
 
 ## Handback / Resume Model
 
-Documented in `/home/jan/pirate/ondeck/backend/API.md`.
+Documented in `/home/redbeard/pirate/ondeck/backend/API.md`.
 
 Base resume flow:
 
@@ -168,7 +168,7 @@ Optional future hook:
 
 The repo contains a local smoke prompt:
 
-- `/home/jan/pirate/ondeck/docs/local-real-lead-review-smoke-prompt.md`
+- `/home/redbeard/pirate/ondeck/docs/local-real-lead-review-smoke-prompt.md`
 
 It was created for a realistic local Mary/Hermes-style test using Manuel Koelman
 and Jan Bergen. It posts enrichment review items, waits for human review, then
@@ -176,9 +176,9 @@ resumes into outreach approval drafts without sending.
 
 There was also local test-data cleanup:
 
-- Old local campaigns were deleted from `/home/jan/pirate/ondeck/data/ondeck.sqlite`.
+- Old local campaigns were deleted from `/home/redbeard/pirate/ondeck/data/ondeck.sqlite`.
 - Backup mentioned in `agents-todos.md`:
-  `/home/jan/pirate/ondeck/data/ondeck.sqlite.before-delete-campaigns-20260622-115346.bak`
+  `/home/redbeard/pirate/ondeck/data/ondeck.sqlite.before-delete-campaigns-20260622-115346.bak`
 
 ## Credentials / Runtime Notes
 
@@ -245,7 +245,7 @@ There was also local test-data cleanup:
 - Do not put campaign/workflow execution state into the enrichment archive.
 - Do not include secret values in handoffs or docs.
 - Do not deploy, merge, or push without explicit instruction in the new session.
-- Do not edit `/home/jan/pirate/notes/todos.md` as part of this handoff thread.
+- Do not edit `/home/redbeard/pirate/notes/todos.md` as part of this handoff thread.
 
 ## Assumptions
 

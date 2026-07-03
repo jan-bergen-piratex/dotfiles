@@ -33,24 +33,24 @@ The review should be skeptical. Do not assume the current implementation is righ
 
 ## Relevant Files
 
-- `/home/jan/pirate/ondeck/docs/lead-pipeline.md`
-- `/home/jan/pirate/ondeck/docs/lead-pipeline-foundry-review.md`
-- `/home/jan/pirate/ondeck/docs/lead-pipeline-wayfinder-review.md`
-- `/home/jan/pirate/ondeck/docs/handovers/260616_lead_pipeline_manuel_handover.md`
-- `/home/jan/pirate/ondeck/backend/lead_source_ingestion.py`
-- `/home/jan/pirate/ondeck/backend/lead_worker.py`
-- `/home/jan/pirate/ondeck/backend/lead_worker_opencode.py`
-- `/home/jan/pirate/ondeck/backend/server.py`
-- `/home/jan/pirate/ondeck/backend/API.md`
-- `/home/jan/pirate/ondeck/backend/tests/test_lead_worker.py`
-- `/home/jan/pirate/ondeck/backend/tests/fixtures/source_ingestion/`
-- `/home/jan/pirate/ondeck/runtime/db/migrations/0025_lead_source_ingestion.sql`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/START_HERE.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/assistant.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/workflow-blueprint.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/skills/source-profiler/skill-spec.md`
-- `/home/jan/pirate/tech-brain/mary/runtime/ondeck-handoff.md`
-- `/home/jan/pirate/tech-brain/_archive/assistants-lead-to-outreach-PLAN.md` as historical A1/A2/A3/A4 context only.
+- `/home/redbeard/pirate/ondeck/docs/lead-pipeline.md`
+- `/home/redbeard/pirate/ondeck/docs/lead-pipeline-foundry-review.md`
+- `/home/redbeard/pirate/ondeck/docs/lead-pipeline-wayfinder-review.md`
+- `/home/redbeard/pirate/ondeck/docs/handovers/260616_lead_pipeline_manuel_handover.md`
+- `/home/redbeard/pirate/ondeck/backend/lead_source_ingestion.py`
+- `/home/redbeard/pirate/ondeck/backend/lead_worker.py`
+- `/home/redbeard/pirate/ondeck/backend/lead_worker_opencode.py`
+- `/home/redbeard/pirate/ondeck/backend/server.py`
+- `/home/redbeard/pirate/ondeck/backend/API.md`
+- `/home/redbeard/pirate/ondeck/backend/tests/test_lead_worker.py`
+- `/home/redbeard/pirate/ondeck/backend/tests/fixtures/source_ingestion/`
+- `/home/redbeard/pirate/ondeck/runtime/db/migrations/0025_lead_source_ingestion.sql`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/START_HERE.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/assistant.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/workflow-blueprint.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/skills/source-profiler/skill-spec.md`
+- `/home/redbeard/pirate/tech-brain/mary/runtime/ondeck-handoff.md`
+- `/home/redbeard/pirate/tech-brain/_archive/assistants-lead-to-outreach-PLAN.md` as historical A1/A2/A3/A4 context only.
 
 ## Output Desired
 

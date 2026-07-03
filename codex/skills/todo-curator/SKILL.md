@@ -10,7 +10,7 @@ description: "Use when creating, checking off, marking done, adding, deduping, r
 Treat Jan's todo file as an operational memory, not a clean project-management database. Preserve intent, history, status markers, and rough wording unless a change improves current usability.
 
 Default todo file:
-`/home/jan/pirate/notes/todos.md`
+`/home/redbeard/pirate/notes/todos.md`
 
 Assume Jan runs `autotodo` every morning. Todo edits must therefore be safe for
 daily rollover: open/active items reappear, done/deprecated/moved items do not.

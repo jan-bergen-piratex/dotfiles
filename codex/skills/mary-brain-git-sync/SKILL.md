@@ -40,13 +40,13 @@ Run Mary brain sync after pushing repo changes that Mary should use soon:
 Use the local wrapper:
 
 ```fish
-/home/jan/pirate/scripts/sync-mary-brains.fish
+/home/redbeard/pirate/scripts/sync-mary-brains.fish
 ```
 
 If the local repos have known unrelated uncommitted work, pass the explicit override:
 
 ```fish
-/home/jan/pirate/scripts/sync-mary-brains.fish --allow-dirty-local
+/home/redbeard/pirate/scripts/sync-mary-brains.fish --allow-dirty-local
 ```
 
 The override only bypasses local cleanliness checks. It does not bypass Jack live checkout safety.
@@ -86,8 +86,8 @@ Install or keep this cron only if the live script is strict dirty-safe and uses 
 Local verification:
 
 ```fish
-git -C /home/jan/pirate/tech-brain status --short --branch
-git -C /home/jan/pirate/piratex-brain status --short --branch
+git -C /home/redbeard/pirate/tech-brain status --short --branch
+git -C /home/redbeard/pirate/piratex-brain status --short --branch
 ```
 
 Jack host verification:

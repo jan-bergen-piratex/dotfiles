@@ -1,12 +1,12 @@
 # Spark Starter Prompt: GIC Missing Attachment Recovery
 
-Use in new Codex CLI session from `/home/jan/pirate/gic-nextjs`.
+Use in new Codex CLI session from `/home/redbeard/pirate/gic-nextjs`.
 
 ```text
 We are implementing a narrow missing-attachment recovery flow for GIC Next.js.
 
 First, read:
-- /home/jan/.codex/SOUL.md
+- /home/redbeard/.codex/SOUL.md
 - AGENTS.md
 - docs/handovers/260617_missing_attachment_recovery_agent_handoff.md
 

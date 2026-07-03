@@ -2,7 +2,7 @@
 
 Parent topic: personal todo system
 Current subtopic: duplicate/deprecation audit
-Source file: /home/jan/pirate/notes/todos.md
+Source file: /home/redbeard/pirate/notes/todos.md
 
 Current active section starts at line 1142.
 

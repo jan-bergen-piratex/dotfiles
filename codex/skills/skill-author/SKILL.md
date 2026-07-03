@@ -59,7 +59,7 @@ verifies, delete it.
 ## Workflow
 
 1. Classify the skill home.
-   - Personal Codex skill: install under `/home/jan/.codex/skills`.
+   - Personal Codex skill: install under `/home/redbeard/.codex/skills`.
    - Mary skill: write or update the Mary skill package/location relevant to that project.
    - Project-local skill: keep it near the project when it depends on project files or conventions.
    - Shared pattern: default to personal Codex first, then later promote to Mary if it proves useful.
@@ -90,10 +90,10 @@ verifies, delete it.
    - Use `apply_patch` for manual edits.
    - Match existing skill style when updating a local project or Mary skill.
    - Avoid broad refactors while creating a skill.
-   - If direct writes to `/home/jan/.codex/skills` are blocked by a read-only
+   - If direct writes to `/home/redbeard/.codex/skills` are blocked by a read-only
      sandbox view, create the complete skill package in a writable directory and
      give Jan this install command:
-     `/home/jan/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`.
+     `/home/redbeard/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`.
      The script installs only into `~/.codex/skills`, replaces the target skill
      directory, and validates with the local `quick_validate.py`.
 
@@ -140,7 +140,7 @@ Reject a skill draft if it mostly says "be helpful", repeats generic model knowl
 - If a subagent creates a Codex skill but cannot install it because `~/.codex`
   is read-only in its sandbox, do not leave the skill as a hidden draft. Report
   the exact installer command Jan can run:
-  `/home/jan/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`.
+  `/home/redbeard/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`.
 
 ## Output Shape
 

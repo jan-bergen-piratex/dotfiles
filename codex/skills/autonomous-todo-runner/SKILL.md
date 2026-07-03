@@ -19,7 +19,7 @@ explicitly asks for a prompt/clipboard handoff.
 Require one todo at hand.
 
 - If Jan gives exact todo text, use it.
-- If Jan gives a fragment, read `/home/jan/pirate/notes/todos.md` and resolve the exact todo.
+- If Jan gives a fragment, read `/home/redbeard/pirate/notes/todos.md` and resolve the exact todo.
 - If zero or multiple todos match, ask Jan to choose one.
 - Preserve Jan's wording in the prompt; do not over-polish the task until it loses intent.
 
@@ -65,11 +65,11 @@ Worker prompt must include:
 
 If the todo creates or updates a Codex skill, also tell the worker:
 
-- install directly into `/home/jan/.codex/skills` when writable;
+- install directly into `/home/redbeard/.codex/skills` when writable;
 - if `~/.codex` is read-only in the worker sandbox, create a complete skill
   package in a writable directory and return the exact command Jan/main thread
   can run:
-  `/home/jan/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`;
+  `/home/redbeard/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>`;
 - do not treat a draft outside `~/.codex/skills` as installed.
 
 Use explorer/reviewer subagents only when they can run independently and answer
@@ -87,7 +87,7 @@ a bounded question. Do not spawn multiple agents for the same unclear todo.
 - For production, auth, credentials, payments, or deletion, stop and report unless prior explicit approval is present in the prompt.
 - If sandbox or approval policy blocks a necessary action, document the exact failed command and continue with the safest useful local work.
 - For Codex skill installation blocked by read-only `~/.codex`, use
-  `/home/jan/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>` as
+  `/home/redbeard/pirate/scripts/install-codex-skill.sh <skill-dir-or-SKILL.md>` as
   the handoff command.
 
 ## Integration
@@ -96,7 +96,7 @@ When the subagent returns:
 
 - inspect changed files or returned artifacts;
 - reject scope creep, bloat, stale assumptions, and weak validation;
-- for skill todos, verify the skill is actually under `/home/jan/.codex/skills`
+- for skill todos, verify the skill is actually under `/home/redbeard/.codex/skills`
   or run/hand off the installer command above;
 - perform any small integration edits in the main thread;
 - run or verify validation;

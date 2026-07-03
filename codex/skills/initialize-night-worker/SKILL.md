@@ -9,22 +9,22 @@ Start the existing local night todo runner in tmux. The goal is to spend spare o
 
 ## Procedure
 
-1. Read `/home/jan/.codex/SOUL.md`.
+1. Read `/home/redbeard/.codex/SOUL.md`.
 2. Check the runner and pane:
    ```bash
-   fish -n /home/jan/pirate/projects/night-todo-runner/night-todos.fish
+   fish -n /home/redbeard/pirate/projects/night-todo-runner/night-todos.fish
    tmux list-panes -a -F '#{session_name}:#{window_index}.#{pane_index}\tpane=#{pane_id}\twindow=#{window_name}\tcmd=#{pane_current_command}\tpath=#{pane_current_path}'
    ```
-3. Prefer the pane whose window is `night-worker` and path is `/home/jan/pirate/projects/night-todo-runner`.
+3. Prefer the pane whose window is `night-worker` and path is `/home/redbeard/pirate/projects/night-todo-runner`.
 4. If no such pane exists, create one in an existing tmux server:
    ```bash
-   tmux new-window -n night-worker -c /home/jan/pirate/projects/night-todo-runner
+   tmux new-window -n night-worker -c /home/redbeard/pirate/projects/night-todo-runner
    ```
    If no tmux server exists, report blocked instead of starting detached orchestration.
 5. Capture the target pane briefly. If a command is already running, report that the worker is already busy and stop.
 6. Send this command to the target pane:
    ```fish
-   cd /home/jan/pirate/projects/night-todo-runner; ./night-todos.fish --execute --limit 14 --parallel 2 --risk low --model gpt-5.4-mini --timeout-minutes 90
+   cd /home/redbeard/pirate/projects/night-todo-runner; ./night-todos.fish --execute --limit 14 --parallel 2 --risk low --model gpt-5.4-mini --timeout-minutes 90
    ```
 7. Do not wait for the run to finish. A short capture after sending is enough to verify initialization.
 

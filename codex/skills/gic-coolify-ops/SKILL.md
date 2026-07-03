@@ -10,14 +10,14 @@ description: "Use for GIC Next.js, legacy GIC, Coolify, backups, iframe deploys,
 Before changing or advising on GIC infrastructure, read current source docs:
 
 ```text
-/home/jan/pirate/tech-brain/ops/gic-current-state.md
-/home/jan/pirate/gic-nextjs/docs/coolify-cd-status.md
+/home/redbeard/pirate/tech-brain/ops/gic-current-state.md
+/home/redbeard/pirate/gic-nextjs/docs/coolify-cd-status.md
 ```
 
 If product/company context matters, read:
 
 ```text
-/home/jan/pirate/piratex-brain/40_Produkte/GIC-Gamescom-Invest-Circle.md
+/home/redbeard/pirate/piratex-brain/40_Produkte/GIC-Gamescom-Invest-Circle.md
 ```
 
 Use current GitHub Actions and Coolify evidence when state may have changed.
@@ -67,7 +67,7 @@ DB: /www/htdocs/w010c8ea/web/gic/storage/database/database.sqlite
 Applicant read-only helper:
 
 ```text
-/home/jan/pirate/scripts/production-applicants.sh
+/home/redbeard/pirate/scripts/production-applicants.sh
 ```
 
 Use this helper when Jan asks for current legacy production applicants. It prints startup and investor applicants sorted newest first.
@@ -98,7 +98,7 @@ main push
 Project CD handoff:
 
 ```text
-/home/jan/pirate/gic-nextjs/docs/coolify-cd-status.md
+/home/redbeard/pirate/gic-nextjs/docs/coolify-cd-status.md
 ```
 
 Known CD state from 2026-06-05:
@@ -220,7 +220,7 @@ For durable docs:
 - Project CD roadmap goes in `gic-nextjs/docs/coolify-cd-status.md`.
 - Product/company context goes in `piratex-brain/40_Produkte/GIC-Gamescom-Invest-Circle.md`.
 - Commit and push brain changes before trying Mary sync.
-- Run `/home/jan/pirate/scripts/sync-mary-brains.fish` after pushed brain changes if Mary should see them.
+- Run `/home/redbeard/pirate/scripts/sync-mary-brains.fish` after pushed brain changes if Mary should see them.
 
 If sync fails due dirty Jack live checkout, stop. Do not reset or overwrite. Report changed paths from the failure output.
 
@@ -229,7 +229,7 @@ If sync fails due dirty Jack live checkout, stop. Do not reset or overwrite. Rep
 Prefer these checks:
 
 ```bash
-git -C /home/jan/pirate/gic-nextjs status --short --branch
+git -C /home/redbeard/pirate/gic-nextjs status --short --branch
 curl -fsS https://gpc.piratex.com/api/health
 ```
 

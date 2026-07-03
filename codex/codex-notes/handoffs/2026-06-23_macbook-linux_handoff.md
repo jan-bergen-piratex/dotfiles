@@ -20,9 +20,9 @@ install Xorg and i3.
 - No direct access to the MacBook system state was available from this Codex session.
 - No repo/project files are involved.
 - Local machine setup note on the current old device says Jan normally uses i3, Alacritty, tmux, fish, Helix, and Codex CLI:
-  `/home/jan/.codex/codex-notes/personal-machine-setup.md`
+  `/home/redbeard/.codex/codex-notes/personal-machine-setup.md`
 - This handoff request came through the session bus inbox:
-  `/home/jan/pirate/notes/session-bus/sessions/macbook-linux/inbox/2026-06-23T10-00-40Z_macbook-linux.md`
+  `/home/redbeard/pirate/notes/session-bus/sessions/macbook-linux/inbox/2026-06-23T10-00-40Z_macbook-linux.md`
 
 ## Guidance Already Given
 
@@ -163,9 +163,9 @@ systemctl status NetworkManager --no-pager
 
 1. This handoff.
 2. The bus inbox that requested it:
-   `/home/jan/pirate/notes/session-bus/sessions/macbook-linux/inbox/2026-06-23T10-00-40Z_macbook-linux.md`
+   `/home/redbeard/pirate/notes/session-bus/sessions/macbook-linux/inbox/2026-06-23T10-00-40Z_macbook-linux.md`
 3. Jan's local setup note for preference context:
-   `/home/jan/.codex/codex-notes/personal-machine-setup.md`
+   `/home/redbeard/.codex/codex-notes/personal-machine-setup.md`
 
 ## Next Actions
 
@@ -191,7 +191,7 @@ systemctl status NetworkManager --no-pager
 
 ## Do Not Change Or Re-Litigate Without Jan
 
-- Do not edit `/home/jan/pirate/notes/todos.md` for this request.
+- Do not edit `/home/redbeard/pirate/notes/todos.md` for this request.
 - Do not perform unrelated repo cleanup, deploys, pushes, or code changes.
 - Do not assume a display manager is needed before proving `startx` works.
 - Do not include secret Wi-Fi passwords in handoffs or bus messages.

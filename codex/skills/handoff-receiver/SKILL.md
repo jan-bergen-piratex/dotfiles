@@ -10,12 +10,12 @@ Use this skill to turn scattered handoff documents into Jan's current pickup lis
 ## Scope
 
 Default search roots:
-- `/home/jan/pirate/tech-brain`
-- `/home/jan/pirate/piratex-brain`
-- `/home/jan/pirate/gic-nextjs`
-- `/home/jan/pirate/gic`
-- `/home/jan/pirate/ondeck`
-- `/home/jan/pirate/projects`
+- `/home/redbeard/pirate/tech-brain`
+- `/home/redbeard/pirate/piratex-brain`
+- `/home/redbeard/pirate/gic-nextjs`
+- `/home/redbeard/pirate/gic`
+- `/home/redbeard/pirate/ondeck`
+- `/home/redbeard/pirate/projects`
 
 Search filenames and content for:
 - `handoff`
@@ -71,7 +71,7 @@ When Jan asks for todos according to handoffs:
 4. Merge duplicates across handoffs, preserving the most specific source.
 5. Separate immediate Jan decisions from agent-executable work.
 
-Do not edit `/home/jan/pirate/notes/todos.md` unless Jan explicitly asks to add
+Do not edit `/home/redbeard/pirate/notes/todos.md` unless Jan explicitly asks to add
 or check off items. If editing todos, use the `todo-curator` skill too.
 
 ## Output

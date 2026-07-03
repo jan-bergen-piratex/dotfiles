@@ -26,7 +26,7 @@ alias xmodmapconf='hx ~/.xmodmap; xmodmap ~/.xmodmap'
 alias alacrittyconf='hx ~/.config/alacritty/alacritty.toml'
 alias sourceall='xmodmap ~/.xmodmap; tmux source-file ~/.tmux.conf; source ~/.config/fish/config.fish'
 alias gpuwatch='watch -n1 "cat /sys/class/drm/card0/device/hwmon/hwmon2/power1_average"'
-alias blender_safe='hsa_disable_sdma=1 hip_visible_devices=0 rocr_visible_devices=0 /home/jan/apps/blender/blender --factory-startup'
+alias blender_safe='hsa_disable_sdma=1 hip_visible_devices=0 rocr_visible_devices=0 /home/redbeard/apps/blender/blender --factory-startup'
 alias notes='cd ~/pirate/notes; cargo run todos.md; hx todos.md knowledge.md'
 alias promptnotes='hx ~/pl/qwertus/promptnotes.md'
 alias catpromptnotes='cat ~/pl/qwertus/promptnotes.md'
@@ -49,10 +49,10 @@ alias print='lp -d HP_Color_LaserJet_MFP_M283fdw_D03F69'
 
 alias git_brains_sync="~/pirate/scripts/sync-mary-brains.fish"
 
-set -x HELIX_RUNTIME /home/jan/.config/helix/runtime
-set -x SCENERY_LIB_PATH /home/jan/pl/scenery/lib
-set -x XDG_DATA_HOME /home/jan/.local/share/
-set -x XDG_CONFIG_HOME /home/jan/.config/
+set -x HELIX_RUNTIME /home/redbeard/.config/helix/runtime
+set -x SCENERY_LIB_PATH /home/redbeard/pl/scenery/lib
+set -x XDG_DATA_HOME /home/redbeard/.local/share/
+set -x XDG_CONFIG_HOME /home/redbeard/.config/
 set -x EDITOR hx
 set -x ROCM_PATH /opt/rocm-6.4.3/rocm/rocm-6.4.3
 set -x HIP_PATH $rocm_path
@@ -67,13 +67,13 @@ set -x SANE_DEFAULT_DEVICE "airscan:e0:HP Color LaserJet MFP M283fdw (D03F69)"
 fish_add_path /usr/local/bin
 fish_add_path /usr/bin
 fish_add_path /bin
-fish_add_path /home/jan/bin
-fish_add_path /home/jan/.cargo/bin
-fish_add_path /home/jan/.local/bin
-fish_add_path /home/jan/scripts
-fish_add_path /home/jan/apps/cool-retro-term
+fish_add_path /home/redbeard/bin
+fish_add_path /home/redbeard/.cargo/bin
+fish_add_path /home/redbeard/.local/bin
+fish_add_path /home/redbeard/scripts
+fish_add_path /home/redbeard/apps/cool-retro-term
 fish_add_path /usr/games
-fish_add_path /home/jan/.opencode/bin
+fish_add_path /home/redbeard/.opencode/bin
 
 if status is-interactive
     setxkbmap us -variant altgr-intl

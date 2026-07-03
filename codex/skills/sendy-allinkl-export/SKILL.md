@@ -9,9 +9,9 @@ metadata:
 
 This skill is scoped to this device and this Sendy installation:
 
-- Local project dir: `/home/jan/pirate/projects/sendy-contacts`
+- Local project dir: `/home/redbeard/pirate/projects/sendy-contacts`
 - SSH target: `ssh-w010c8ea@w010c8ea.kasserver.com`
-- SSH key: `/home/jan/.ssh/id_ed25519_gic_allinkl`
+- SSH key: `/home/redbeard/.ssh/id_ed25519_gic_allinkl`
 - Sendy install: `/www/htdocs/w010c8ea/sendy`
 - Sendy config: `/www/htdocs/w010c8ea/sendy/includes/config.php`
 - Preferred execution location on server: `/tmp`
@@ -23,7 +23,7 @@ Use this skill when the user gives a non-technical request like “give me a CSV
 Produce nice CSV files on this device in:
 
 ```text
-/home/jan/pirate/projects/sendy-contacts/
+/home/redbeard/pirate/projects/sendy-contacts/
 ```
 
 Default all-brand DB export files:
@@ -107,21 +107,21 @@ Name/company normalization:
 Commands:
 
 ```bash
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl scripts/export_sendy_contacts_db.php ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/export_sendy_contacts_db.php
-ssh -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'php -l /tmp/export_sendy_contacts_db.php'
-ssh -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'SENDY_CONFIG=/www/htdocs/w010c8ea/sendy/includes/config.php php /tmp/export_sendy_contacts_db.php /tmp/sendy_contacts_db.csv /tmp/sendy_contacts_db_omclub.csv'
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db.csv /home/jan/pirate/projects/sendy-contacts/sendy_contacts_db.csv
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub.csv /home/jan/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl scripts/export_sendy_contacts_db.php ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/export_sendy_contacts_db.php
+ssh -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'php -l /tmp/export_sendy_contacts_db.php'
+ssh -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'SENDY_CONFIG=/www/htdocs/w010c8ea/sendy/includes/config.php php /tmp/export_sendy_contacts_db.php /tmp/sendy_contacts_db.csv /tmp/sendy_contacts_db_omclub.csv'
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db.csv /home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db.csv
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub.csv /home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv
 ```
 
 Dedicated OMClub commands:
 
 ```bash
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl scripts/export_sendy_omclub_contacts_db.php ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/export_sendy_omclub_contacts_db.php
-ssh -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'php -l /tmp/export_sendy_omclub_contacts_db.php'
-ssh -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'SENDY_CONFIG=/www/htdocs/w010c8ea/sendy/includes/config.php php /tmp/export_sendy_omclub_contacts_db.php /tmp/sendy_contacts_db_omclub.csv /tmp/sendy_contacts_db_omclub_sponsors.csv'
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub.csv /home/jan/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv
-scp -i /home/jan/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub_sponsors.csv /home/jan/pirate/projects/sendy-contacts/sendy_contacts_db_omclub_sponsors.csv
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl scripts/export_sendy_omclub_contacts_db.php ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/export_sendy_omclub_contacts_db.php
+ssh -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'php -l /tmp/export_sendy_omclub_contacts_db.php'
+ssh -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com 'SENDY_CONFIG=/www/htdocs/w010c8ea/sendy/includes/config.php php /tmp/export_sendy_omclub_contacts_db.php /tmp/sendy_contacts_db_omclub.csv /tmp/sendy_contacts_db_omclub_sponsors.csv'
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub.csv /home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv
+scp -i /home/redbeard/.ssh/id_ed25519_gic_allinkl ssh-w010c8ea@w010c8ea.kasserver.com:/tmp/sendy_contacts_db_omclub_sponsors.csv /home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db_omclub_sponsors.csv
 ```
 
 Use escalated execution approval for SSH/SCP. Be careful on the server: no deletes, no writes to the web root unless explicitly requested. Leaving temp files in `/tmp` is acceptable unless the user asks for cleanup.
@@ -132,8 +132,8 @@ Verification:
 python3 - <<'PY'
 import csv
 for path in [
-    '/home/jan/pirate/projects/sendy-contacts/sendy_contacts_db.csv',
-    '/home/jan/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv',
+    '/home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db.csv',
+    '/home/redbeard/pirate/projects/sendy-contacts/sendy_contacts_db_omclub.csv',
 ]:
     with open(path, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)

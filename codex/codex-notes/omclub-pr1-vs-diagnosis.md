@@ -2,7 +2,7 @@
 
 Date: 2026-06-09
 
-Scope: Compare PR `#1 feat: SQLite journal as durable submission record` against `/home/jan/.codex/codex-notes/omclub-website-investigation.md`.
+Scope: Compare PR `#1 feat: SQLite journal as durable submission record` against `/home/redbeard/.codex/codex-notes/omclub-website-investigation.md`.
 
 ## Verdict
 

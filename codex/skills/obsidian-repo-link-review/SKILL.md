@@ -21,9 +21,9 @@ Do not stop after checking Jan's active Obsidian vault. Decode the link and look
    - Treat `file` as a repo-relative path without adding `.md` only after checking both forms.
 
 2. Map the vault to candidate repos.
-   - `Tech Brain`, `tech-brain`, or technical/Mary/ops docs: `/home/jan/pirate/tech-brain`.
-   - `piratex-brain`, `PIRATEx Brain`, company knowledge, people, projects, or business context: `/home/jan/pirate/piratex-brain`.
-   - If the vault name is ambiguous, search likely repo roots under `/home/jan/pirate` before asking Jan.
+   - `Tech Brain`, `tech-brain`, or technical/Mary/ops docs: `/home/redbeard/pirate/tech-brain`.
+   - `piratex-brain`, `PIRATEx Brain`, company knowledge, people, projects, or business context: `/home/redbeard/pirate/piratex-brain`.
+   - If the vault name is ambiguous, search likely repo roots under `/home/redbeard/pirate` before asking Jan.
 
 3. Pull or update the corresponding repo before reading when freshness matters.
    - For `tech-brain` or `piratex-brain`, use the `mary-brain-git-sync` skill's local repo verification/pull discipline.
@@ -77,7 +77,7 @@ I could not find the file. Most likely: <sync issue / wrong repo / unsaved note>
 
 ## Boundaries
 
-- Do not rely on `/home/jan/Dokumente/Obsidian Vault` unless the linked file is actually found there.
+- Do not rely on `/home/redbeard/Dokumente/Obsidian Vault` unless the linked file is actually found there.
 - Do not modify repo files unless Jan explicitly asks.
 - Do not sync Mary live brains just to read a document. Only use live sync when the task is to make Mary use changed docs.
 - Do not guess file contents from the filename.

@@ -20,7 +20,7 @@ The point of this skill is to save main-agent tokens and keep the main thread av
    - Delegate sidecar work that is large, bounded, and can run independently.
 
 2. Prepare compact context.
-   - If the task depends on chat history, write or refresh a short handoff under `/home/jan/.codex/codex-notes/`.
+   - If the task depends on chat history, write or refresh a short handoff under `/home/redbeard/.codex/codex-notes/`.
    - Include objective, current state, relevant files, constraints, non-goals, and validation.
    - Do not pass secrets.
 
@@ -85,4 +85,4 @@ Keep these in the main thread unless Jan explicitly approves a different split:
 
 ## If Subagents Are Unavailable
 
-Write a compact handoff plus ready-to-run Spark prompt under `/home/jan/.codex/codex-notes/`, then tell Jan to start a Spark session manually with that prompt.
+Write a compact handoff plus ready-to-run Spark prompt under `/home/redbeard/.codex/codex-notes/`, then tell Jan to start a Spark session manually with that prompt.

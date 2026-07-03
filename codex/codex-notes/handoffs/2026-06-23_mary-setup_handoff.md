@@ -15,12 +15,12 @@ It is not a handoff for changing Mary's core LLM/backend. That idea is obsolete;
 
 - Local date/time checked during handoff creation: `2026-06-23 12:01:20 CEST +0200`.
 - Local `tech-brain` repo status:
-  - path: `/home/jan/pirate/tech-brain`
+  - path: `/home/redbeard/pirate/tech-brain`
   - branch: `main`
   - status: `ahead 1, behind 22`, dirty with many modified/deleted/untracked Mary and lead-enrichment files.
   - recent commit: `adfd189 Harden Mary website command workflow`.
 - Local `piratex-brain` repo status:
-  - path: `/home/jan/pirate/piratex-brain`
+  - path: `/home/redbeard/pirate/piratex-brain`
   - branch: `main`
   - status: `behind 8`, dirty with many lead-generation-enrichment changes and archive/untracked files.
   - recent commit: `527fd11 vault backup: 2026-06-12 11:16:19`.
@@ -52,25 +52,25 @@ It is not a handoff for changing Mary's core LLM/backend. That idea is obsolete;
   - inside Mary runtime: `/opt/data/.local/share/opencode/auth.json`
   - inside Mary runtime: `/opt/data/.local/share/opencode/account.json`
 - Current session-bus audit response already written:
-  - `/home/jan/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`
+  - `/home/redbeard/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`
 
 ## Current docs / source-of-truth files to read first
 
-1. `/home/jan/.codex/SOUL.md`
-2. `/home/jan/pirate/tech-brain/mary/README.md`
-3. `/home/jan/pirate/tech-brain/mary/architecture.md`
-4. `/home/jan/pirate/tech-brain/mary/workflows/START_HERE.md`
-5. `/home/jan/pirate/tech-brain/mary/skills/live/mary-request-triage/SKILL.md`
-6. `/home/jan/pirate/tech-brain/mary/skills/live/mary-website-pr/SKILL.md`
-7. `/home/jan/pirate/tech-brain/mary/skills/live/mary-pr-merge-approval/SKILL.md`
-8. `/home/jan/pirate/tech-brain/mary/workflows/website-change/website-registry.md`
-9. `/home/jan/pirate/tech-brain/mary/roadmap/generic-website-preview-route.md`
-10. `/home/jan/pirate/tech-brain/mary/workflows/lead-enrichment/opencode-scrubber-worker.md`
-11. `/home/jan/pirate/tech-brain/mary/runtime/ondeck-handoff.md`
-12. `/home/jan/pirate/tech-brain/mary/workflows/lead-to-outreach/START_HERE.md`
-13. `/home/jan/pirate/tech-brain/mary/workflows/personal-outreach/assistant.md`
-14. `/home/jan/pirate/tech-brain/mary/skills/strategy.md`
-15. `/home/jan/pirate/notes/todos.md`, especially current `# 2026-06-23` section around Mary/Hermes and Lead enrichment.
+1. `/home/redbeard/.codex/SOUL.md`
+2. `/home/redbeard/pirate/tech-brain/mary/README.md`
+3. `/home/redbeard/pirate/tech-brain/mary/architecture.md`
+4. `/home/redbeard/pirate/tech-brain/mary/workflows/START_HERE.md`
+5. `/home/redbeard/pirate/tech-brain/mary/skills/live/mary-request-triage/SKILL.md`
+6. `/home/redbeard/pirate/tech-brain/mary/skills/live/mary-website-pr/SKILL.md`
+7. `/home/redbeard/pirate/tech-brain/mary/skills/live/mary-pr-merge-approval/SKILL.md`
+8. `/home/redbeard/pirate/tech-brain/mary/workflows/website-change/website-registry.md`
+9. `/home/redbeard/pirate/tech-brain/mary/roadmap/generic-website-preview-route.md`
+10. `/home/redbeard/pirate/tech-brain/mary/workflows/lead-enrichment/opencode-scrubber-worker.md`
+11. `/home/redbeard/pirate/tech-brain/mary/runtime/ondeck-handoff.md`
+12. `/home/redbeard/pirate/tech-brain/mary/workflows/lead-to-outreach/START_HERE.md`
+13. `/home/redbeard/pirate/tech-brain/mary/workflows/personal-outreach/assistant.md`
+14. `/home/redbeard/pirate/tech-brain/mary/skills/strategy.md`
+15. `/home/redbeard/pirate/notes/todos.md`, especially current `# 2026-06-23` section around Mary/Hermes and Lead enrichment.
 
 Because local brain repos are dirty and behind, check live runtime state before treating local files as fully authoritative.
 
@@ -95,7 +95,7 @@ Because local brain repos are dirty and behind, check live runtime state before 
   - `PIRATEglobal/piratesummit.com`
 - Preview mechanism:
   - GitHub PR webhook -> `preview-webhook` -> queue -> `preview-worker` -> static preview served by `preview-static`.
-  - Docs: `/home/jan/pirate/tech-brain/mary/roadmap/generic-website-preview-route.md`
+  - Docs: `/home/redbeard/pirate/tech-brain/mary/roadmap/generic-website-preview-route.md`
   - Supported repos are allowlisted; new Mary website scope must include GitHub permissions and preview onboarding.
 - Open issue:
   - Preview onboarding for new websites and "preview starts only after second trigger" remain hardening work.
@@ -131,7 +131,7 @@ Because local brain repos are dirty and behind, check live runtime state before 
   - OpenCode can be called by generated programs as a bounded scrubber/worker.
 - OpenCode technical auth is verified in Mary runtime.
 - Existing doc path for OpenCode worker interface:
-  - `/home/jan/pirate/tech-brain/mary/workflows/lead-enrichment/opencode-scrubber-worker.md`
+  - `/home/redbeard/pirate/tech-brain/mary/workflows/lead-enrichment/opencode-scrubber-worker.md`
 - Open product work:
   - first real `contact_enrichment_scrub` job
   - JSON/JSONL validator
@@ -139,7 +139,7 @@ Because local brain repos are dirty and behind, check live runtime state before 
   - make `ondeck-lead-worker-opencode` sidecar durable in Coolify/IaC if it is still just a direct Docker container
   - connector live smokes.
 - Existing local note with useful but non-source-of-truth status:
-  - `/home/jan/.codex/codex-notes/ondeck-prod-lead-worker-plan.md`
+  - `/home/redbeard/.codex/codex-notes/ondeck-prod-lead-worker-plan.md`
 
 ## Connectors and runtime surfaces
 
@@ -163,9 +163,9 @@ Keep these open unless fresh evidence proves otherwise:
 ## Todo audit state
 
 - Previous audit response with detailed todo status:
-  - `/home/jan/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`
+  - `/home/redbeard/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`
 - Current canonical `todos.md` section:
-  - `/home/jan/pirate/notes/todos.md` under `# 2026-06-23`
+  - `/home/redbeard/pirate/notes/todos.md` under `# 2026-06-23`
   - Mary/Hermes block is around lines 3822-3841 in the audit's copy.
 - Important cleanup finding:
   - Current `# 2026-06-23` already has a `[q] Rolled-forward aliases retired on 2026-06-23` block.
@@ -200,9 +200,9 @@ Keep these open unless fresh evidence proves otherwise:
 
 ## What the next session should do first
 
-1. Read `/home/jan/.codex/SOUL.md`.
+1. Read `/home/redbeard/.codex/SOUL.md`.
 2. Read this handoff.
-3. Read `/home/jan/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`.
+3. Read `/home/redbeard/pirate/notes/session-bus/sessions/mary-setup/outbox/2026-06-23T06-52-21Z_mary-setup_response.md`.
 4. Check current local repo status for `tech-brain`, `piratex-brain`, and `notes`.
 5. If continuing todo cleanup, use the `todo-curator` skill and edit only the current canonical `# 2026-06-23` todo section unless Jan asks for historical cleanup.
 6. If continuing Mary setup, verify live runtime first with the commands below.
@@ -210,10 +210,10 @@ Keep these open unless fresh evidence proves otherwise:
 ## Useful verification commands
 
 ```bash
-git -C /home/jan/pirate/tech-brain status --short --branch
-git -C /home/jan/pirate/piratex-brain status --short --branch
-git -C /home/jan/pirate/tech-brain log --oneline -5
-git -C /home/jan/pirate/piratex-brain log --oneline -5
+git -C /home/redbeard/pirate/tech-brain status --short --branch
+git -C /home/redbeard/pirate/piratex-brain status --short --branch
+git -C /home/redbeard/pirate/tech-brain log --oneline -5
+git -C /home/redbeard/pirate/piratex-brain log --oneline -5
 ```
 
 ```bash

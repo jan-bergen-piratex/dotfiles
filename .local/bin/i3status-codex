@@ -7,7 +7,7 @@ from datetime import datetime
 from html import escape
 
 REFRESH_SECONDS = 60
-I3STATUS_CONFIG = "/home/jan/.config/i3status/config"
+I3STATUS_CONFIG = "/home/redbeard/.config/i3status/config"
 YELLOW = "#ffff00"
 RED = "#ff0000"
 GREEN = "#00ff00"

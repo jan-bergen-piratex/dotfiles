@@ -46,34 +46,34 @@ Observed likely reason: current worker uses Serper snippets and prompt, not a re
 
 OnDeck:
 
-- `/home/jan/pirate/ondeck/docs/lead-pipeline.md`
-- `/home/jan/pirate/ondeck/docs/sourcing-enrichment-build-plan.md`
-- `/home/jan/pirate/ondeck/docs/handovers/260616_lead_pipeline_manuel_handover.md`
-- `/home/jan/pirate/ondeck/backend/lead_worker.py`
-- `/home/jan/pirate/ondeck/backend/lead_worker_opencode.py`
-- `/home/jan/pirate/ondeck/backend/server.py`
-- `/home/jan/pirate/ondeck/src/archetypes/LeadPipelineView.tsx`
-- `/home/jan/pirate/ondeck/runtime/db/migrations/0022_lead_pipeline.sql`
+- `/home/redbeard/pirate/ondeck/docs/lead-pipeline.md`
+- `/home/redbeard/pirate/ondeck/docs/sourcing-enrichment-build-plan.md`
+- `/home/redbeard/pirate/ondeck/docs/handovers/260616_lead_pipeline_manuel_handover.md`
+- `/home/redbeard/pirate/ondeck/backend/lead_worker.py`
+- `/home/redbeard/pirate/ondeck/backend/lead_worker_opencode.py`
+- `/home/redbeard/pirate/ondeck/backend/server.py`
+- `/home/redbeard/pirate/ondeck/src/archetypes/LeadPipelineView.tsx`
+- `/home/redbeard/pirate/ondeck/runtime/db/migrations/0022_lead_pipeline.sql`
 
 Mary / Manuel A1:
 
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/START_HERE.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/workflow-blueprint.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/skills/source-profiler/skill-spec.md`
-- `/home/jan/pirate/tech-brain/mary/workflows/lead-sourcing/skills/candidate-route-composer/skill-spec.md`
-- `/home/jan/pirate/tech-brain/mary/skills/live/mary-lead-enrichment/SKILL.md`
-- `/home/jan/pirate/tech-brain/mary/skills/live/mary-lead-enrichment/references/dmexco-omclub-source-profile.md`
-- `/home/jan/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/SKILL.md`
-- `/home/jan/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/references/carousel-exhibitor-directory.md`
-- `/home/jan/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/references/dmexco-exhibitor-guide.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/START_HERE.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/workflow-blueprint.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/skills/source-profiler/skill-spec.md`
+- `/home/redbeard/pirate/tech-brain/mary/workflows/lead-sourcing/skills/candidate-route-composer/skill-spec.md`
+- `/home/redbeard/pirate/tech-brain/mary/skills/live/mary-lead-enrichment/SKILL.md`
+- `/home/redbeard/pirate/tech-brain/mary/skills/live/mary-lead-enrichment/references/dmexco-omclub-source-profile.md`
+- `/home/redbeard/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/SKILL.md`
+- `/home/redbeard/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/references/carousel-exhibitor-directory.md`
+- `/home/redbeard/pirate/tech-brain/mary/skills/live/automation/website-scraping-and-monitoring/references/dmexco-exhibitor-guide.md`
 
 Legacy/historical useful:
 
-- `/home/jan/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/web/event_list_extractor.py`
-- `/home/jan/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/tests/test_golden_fixtures.py`
-- `/home/jan/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/tests/fixtures/golden_event_page.html`
-- `/home/jan/pirate/piratex-brain/60_Prozesse/01_Marketing-Leadgenerierung/lead-generation-enrichment/known-patterns/source-patterns/website-or-event-page.md`
-- `/home/jan/pirate/piratex-brain/60_Prozesse/01_Marketing-Leadgenerierung/lead-generation-enrichment/known-patterns/source-patterns/structured-bulk-source.md`
+- `/home/redbeard/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/web/event_list_extractor.py`
+- `/home/redbeard/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/tests/test_golden_fixtures.py`
+- `/home/redbeard/pirate/tech-brain/todos-jan/lead-enrichment/toolkit/tests/fixtures/golden_event_page.html`
+- `/home/redbeard/pirate/piratex-brain/60_Prozesse/01_Marketing-Leadgenerierung/lead-generation-enrichment/known-patterns/source-patterns/website-or-event-page.md`
+- `/home/redbeard/pirate/piratex-brain/60_Prozesse/01_Marketing-Leadgenerierung/lead-generation-enrichment/known-patterns/source-patterns/structured-bulk-source.md`
 
 ## Review Constraints
 

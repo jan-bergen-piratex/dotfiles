@@ -27,7 +27,7 @@ Do not treat Jan's personal GitHub access as evidence that Mary can use the repo
 
 Inspect the current sources of truth before editing:
 
-- `/home/jan/.codex/SOUL.md`
+- `/home/redbeard/.codex/SOUL.md`
 - relevant `AGENTS.md`
 - `tech-brain/mary/architecture.md`
 - `tech-brain/mary/roadmap/roadmap.md`
