@@ -25,9 +25,10 @@ alias tmuxconf='hx ~/.tmux.conf; tmux source-file ~/.tmux.conf'
 alias xmodmapconf='hx ~/.xmodmap; xmodmap ~/.xmodmap'
 alias alacrittyconf='hx ~/.config/alacritty/alacritty.toml'
 alias sourceall='xmodmap ~/.xmodmap; tmux source-file ~/.tmux.conf; source ~/.config/fish/config.fish'
+alias syncconfs='sync-dotfiles'
 alias gpuwatch='watch -n1 "cat /sys/class/drm/card0/device/hwmon/hwmon2/power1_average"'
 alias blender_safe='hsa_disable_sdma=1 hip_visible_devices=0 rocr_visible_devices=0 /home/redbeard/apps/blender/blender --factory-startup'
-alias notes='cd ~/pirate/notes; cargo run todos.md; hx todos.md knowledge.md'
+alias notes='cd ~/pirate/notes; cargo run todos.md patterns.ron; hx todos.md knowledge.md'
 alias promptnotes='hx ~/pl/qwertus/promptnotes.md'
 alias catpromptnotes='cat ~/pl/qwertus/promptnotes.md'
 alias geppetto='firefox chatgpt.com'
@@ -74,6 +75,25 @@ fish_add_path /home/redbeard/scripts
 fish_add_path /home/redbeard/apps/cool-retro-term
 fish_add_path /usr/games
 fish_add_path /home/redbeard/.opencode/bin
+
+function sync-dotfiles
+    set repo /home/redbeard/pirate/dotfiles
+
+    cp /home/redbeard/.config/fish/config.fish $repo/config.fish
+    cp /home/redbeard/.config/alacritty/alacritty.toml $repo/alacritty.toml
+    cp /home/redbeard/.config/helix/config.toml $repo/config.toml
+    cp /home/redbeard/.tmux.conf $repo/.tmux.conf
+    cp /home/redbeard/.xmodmap $repo/.xmodmap
+
+    mkdir -p $repo/.config/i3 $repo/.config/i3status $repo/.local/bin
+    cp /home/redbeard/.config/i3/config $repo/.config/i3/config
+    cp /home/redbeard/.config/i3status/config $repo/.config/i3status/config
+    cp /home/redbeard/.local/bin/codex-tmux $repo/.local/bin/codex-tmux
+    cp /home/redbeard/.local/bin/i3status-codex $repo/.local/bin/i3status-codex
+    cp /home/redbeard/.local/bin/setup-displays.sh $repo/.local/bin/setup-displays.sh
+
+    git -C $repo status --short
+end
 
 if status is-interactive
     setxkbmap us -variant altgr-intl

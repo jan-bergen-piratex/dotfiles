@@ -62,6 +62,7 @@ C-d = "no_op"
 ret = ":write-all"
 tab = ":write-all"
 X = ["extend_line_up", "extend_to_line_bounds"]
+A-s = ":toggle-option soft-wrap.enable"
 
 [keys.normal.space]
 u = "switch_to_uppercase"
