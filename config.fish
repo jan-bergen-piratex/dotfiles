@@ -90,6 +90,11 @@ function sync-dotfiles
     cp /home/redbeard/.config/i3status/config $repo/.config/i3status/config
     cp /home/redbeard/.local/bin/codex-tmux $repo/.local/bin/codex-tmux
     cp /home/redbeard/.local/bin/i3status-codex $repo/.local/bin/i3status-codex
+    cp /home/redbeard/.local/bin/codex-rate-limits-json $repo/.local/bin/codex-rate-limits-json
+    cp /home/redbeard/.local/bin/set-gtk-scaling $repo/.local/bin/set-gtk-scaling
+    cp /home/redbeard/.local/bin/fix-pointer-accel $repo/.local/bin/fix-pointer-accel
+    cp /home/redbeard/.local/bin/macbook-brightness $repo/.local/bin/macbook-brightness
+    cp /home/redbeard/.local/bin/macbook-keyboard-brightness $repo/.local/bin/macbook-keyboard-brightness
     cp /home/redbeard/.local/bin/setup-displays.sh $repo/.local/bin/setup-displays.sh
 
     git -C $repo status --short

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+xinput=/home/redbeard/.local/bin/xinput
+
+[ -x "$xinput" ] || exit 0
+
+"$xinput" list --name-only | while IFS= read -r device; do
+    "$xinput" list-props "$device" 2>/dev/null | grep -q 'libinput Accel Profile Enabled' || continue
+    "$xinput" set-prop "$device" 'libinput Accel Profile Enabled' 0 1 0 2>/dev/null || true
+    "$xinput" set-prop "$device" 'libinput Accel Speed' 1 2>/dev/null || true
+done

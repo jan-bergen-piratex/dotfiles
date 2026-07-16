@@ -100,12 +100,39 @@ def fmt_percent(left, prefix=""):
     return f'{escape(prefix)}<span foreground="{color_for_percent(left)}">{left}%</span>'
 
 
+def fmt_window(window, prefix=""):
+    used = int(window.get("usedPercent") or 0)
+    left = max(0, 100 - used)
+    reset = fmt_until(window.get("resetsAt"))
+    return f"{escape(prefix)} {fmt_percent(left)} {reset}"
+
+
+def window_label(window, fallback):
+    minutes = window.get("windowDurationMins")
+    try:
+        minutes = int(minutes)
+    except (TypeError, ValueError):
+        return fallback
+
+    if minutes == 5 * 60:
+        return "5h"
+    if minutes % (7 * 24 * 60) == 0:
+        weeks = minutes // (7 * 24 * 60)
+        return f"{weeks}w"
+    if minutes % (24 * 60) == 0:
+        return f"{minutes // (24 * 60)}d"
+    if minutes % 60 == 0:
+        return f"{minutes // 60}h"
+    return f"{minutes}m"
+
+
 def fmt_limit(limit, prefix=""):
-    primary, secondary, primary_left, secondary_left = remaining(limit)
-    return (
-        f"{fmt_percent(primary_left, prefix)} {fmt_until(primary.get('resetsAt'))}"
-        f" | {fmt_percent(secondary_left, prefix)} {fmt_weekday(secondary.get('resetsAt'))}"
-    )
+    windows = []
+    for name in ("primary", "secondary"):
+        window = limit.get(name) or {}
+        if window:
+            windows.append(fmt_window(window, prefix))
+    return " | ".join(windows) or f"{escape(prefix)} no limits"
 
 
 def block(text, name):
@@ -211,6 +238,8 @@ def get_codex_blocks():
     parts = []
     if codex:
         parts.append(fmt_limit(codex, CODEX))
+    else:
+        parts.append(f"{CODEX} no limits")
 
     if spark:
         primary = spark.get("primary") or {}
