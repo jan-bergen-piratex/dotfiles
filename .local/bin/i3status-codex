@@ -1,0 +1,294 @@
+#!/usr/bin/env python3
+import json
+import subprocess
+import sys
+import time
+from datetime import datetime
+from html import escape
+
+REFRESH_SECONDS = 60
+I3STATUS_CONFIG = "/home/redbeard/.config/i3status/config"
+BATTERY_PATH = "/sys/class/power_supply/macsmc-battery"
+YELLOW = "#ffff00"
+RED = "#ff0000"
+GREEN = "#00ff00"
+CODEX = "🧠"
+SPARK = "✨"
+
+
+def rpc_call():
+    proc = subprocess.Popen(
+        ["codex", "app-server"],
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        text=True,
+    )
+
+    def send(message):
+        proc.stdin.write(json.dumps(message) + "\n")
+        proc.stdin.flush()
+
+    send({
+        "id": 0,
+        "method": "initialize",
+        "params": {
+            "clientInfo": {
+                "name": "jan_i3_status",
+                "title": "Jan i3 Status",
+                "version": "0.1.0",
+            },
+            "capabilities": {"experimentalApi": True},
+        },
+    })
+    send({"method": "initialized", "params": {}})
+    send({"id": 1, "method": "account/rateLimits/read", "params": None})
+
+    deadline = time.time() + 20
+    result = None
+    while time.time() < deadline:
+        line = proc.stdout.readline()
+        if not line:
+            break
+        msg = json.loads(line)
+        if msg.get("id") == 1:
+            result = msg.get("result")
+            break
+
+    proc.terminate()
+    try:
+        proc.wait(timeout=2)
+    except subprocess.TimeoutExpired:
+        proc.kill()
+
+    return result
+
+
+def fmt_until(ts):
+    if not ts:
+        return "?"
+    dt = datetime.fromtimestamp(ts)
+    now = datetime.now()
+    if dt.date() == now.date():
+        return dt.strftime("%H:%M")
+    return dt.strftime("%d.%m. %H:%M")
+
+
+def fmt_weekday(ts):
+    if not ts:
+        return "?"
+    return datetime.fromtimestamp(ts).strftime("%a %H:%M")
+
+
+def remaining(limit):
+    primary = limit.get("primary") or {}
+    secondary = limit.get("secondary") or {}
+    primary_left = max(0, 100 - int(primary.get("usedPercent") or 0))
+    secondary_left = max(0, 100 - int(secondary.get("usedPercent") or 0))
+    return primary, secondary, primary_left, secondary_left
+
+
+def color_for_percent(left):
+    if left < 10:
+        return RED
+    if left < 25:
+        return YELLOW
+    return GREEN
+
+
+def fmt_percent(left, prefix=""):
+    return f'{escape(prefix)}<span foreground="{color_for_percent(left)}">{left}%</span>'
+
+
+def fmt_window(window, prefix=""):
+    used = int(window.get("usedPercent") or 0)
+    left = max(0, 100 - used)
+    reset = fmt_until(window.get("resetsAt"))
+    return f"{escape(prefix)} {fmt_percent(left)} {reset}"
+
+
+def window_label(window, fallback):
+    minutes = window.get("windowDurationMins")
+    try:
+        minutes = int(minutes)
+    except (TypeError, ValueError):
+        return fallback
+
+    if minutes == 5 * 60:
+        return "5h"
+    if minutes % (7 * 24 * 60) == 0:
+        weeks = minutes // (7 * 24 * 60)
+        return f"{weeks}w"
+    if minutes % (24 * 60) == 0:
+        return f"{minutes // (24 * 60)}d"
+    if minutes % 60 == 0:
+        return f"{minutes // 60}h"
+    return f"{minutes}m"
+
+
+def fmt_limit(limit, prefix=""):
+    windows = []
+    for name in ("primary", "secondary"):
+        window = limit.get(name) or {}
+        if window:
+            windows.append(fmt_window(window, prefix))
+    return " | ".join(windows) or f"{escape(prefix)} no limits"
+
+
+def block(text, name):
+    return {
+        "full_text": text,
+        "name": name,
+        "markup": "pango",
+        "color": "#ffffff",
+    }
+
+
+def fmt_volume_block():
+    try:
+        proc = subprocess.run(
+            ["wpctl", "get-volume", "@DEFAULT_AUDIO_SINK@"],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            timeout=1,
+        )
+    except Exception:
+        return None
+
+    parts = proc.stdout.strip().split()
+    if len(parts) < 2:
+        return None
+
+    try:
+        percent = round(float(parts[1]) * 100)
+    except ValueError:
+        return None
+
+    muted = "[MUTED]" in parts
+    item = block(f"{'MUTE' if muted else 'VOL'} {percent}%", "volume")
+    if muted:
+        item["color"] = "#888888"
+    return item
+
+
+def read_battery_file(name):
+    try:
+        with open(f"{BATTERY_PATH}/{name}", encoding="utf-8") as f:
+            return f.read().strip()
+    except OSError:
+        return None
+
+
+def fmt_battery_time(seconds):
+    seconds = int(seconds or 0)
+    if seconds <= 0:
+        return ""
+    minutes = seconds // 60
+    return f" {minutes // 60}:{minutes % 60:02d}"
+
+
+def battery_color(capacity, status):
+    if status in ("Charging", "Full"):
+        return GREEN
+    return color_for_percent(int(capacity))
+
+
+def fmt_battery_block():
+    capacity = read_battery_file("capacity")
+    status = read_battery_file("status")
+    if not capacity or not status:
+        return None
+
+    status_text = {
+        "Charging": "CHR",
+        "Discharging": "BAT",
+        "Full": "FULL",
+        "Not charging": "IDLE",
+    }.get(status, "UNK")
+
+    time_file = "time_to_full_now" if status == "Charging" else "time_to_empty_now"
+    return (
+        f"{status_text} {capacity}%{fmt_battery_time(read_battery_file(time_file))}",
+        battery_color(capacity, status),
+    )
+
+
+def fix_battery_blocks(status_blocks):
+    battery = fmt_battery_block()
+    if not battery:
+        return status_blocks
+    text, color = battery
+    for item in status_blocks:
+        if item.get("name") == "battery":
+            item["full_text"] = text
+            item["instance"] = BATTERY_PATH
+            item["color"] = color
+    return status_blocks
+
+
+def get_codex_blocks():
+    result = rpc_call()
+    limits = (result or {}).get("rateLimitsByLimitId") or {}
+    codex = limits.get("codex") or (result or {}).get("rateLimits")
+    spark = limits.get("codex_bengalfox")
+
+    blocks = []
+    parts = []
+    if codex:
+        parts.append(fmt_limit(codex, CODEX))
+    else:
+        parts.append(f"{CODEX} no limits")
+
+    if spark:
+        primary = spark.get("primary") or {}
+        secondary = spark.get("secondary") or {}
+        touched = (primary.get("usedPercent") or 0) > 0 or (secondary.get("usedPercent") or 0) > 0
+        if touched:
+            parts.append(fmt_limit(spark, SPARK))
+
+    if parts:
+        blocks.append(block(" | ".join(parts), "codex"))
+
+    return blocks
+
+
+def main():
+    proc = subprocess.Popen(["i3status", "-c", I3STATUS_CONFIG], stdout=subprocess.PIPE, text=True)
+    last_fetch = 0
+    cached_blocks = [{"full_text": "Codex ?", "name": "codex"}]
+
+    for line in proc.stdout:
+        if line.startswith('{"version"') or line.strip() == "[":
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            continue
+
+        prefix = "," if line.startswith(",") else ""
+        payload = line[1:] if prefix else line
+
+        try:
+            status_blocks = json.loads(payload)
+        except json.JSONDecodeError:
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            continue
+
+        status_blocks = fix_battery_blocks(status_blocks)
+
+        if time.time() - last_fetch >= REFRESH_SECONDS:
+            try:
+                cached_blocks = get_codex_blocks()
+            except Exception:
+                cached_blocks = [{"full_text": "Codex ?", "name": "codex"}]
+            last_fetch = time.time()
+
+        volume_block = fmt_volume_block()
+        extra_blocks = cached_blocks + ([volume_block] if volume_block else [])
+        sys.stdout.write(prefix + json.dumps(extra_blocks + status_blocks) + "\n")
+        sys.stdout.flush()
+
+
+if __name__ == "__main__":
+    main()

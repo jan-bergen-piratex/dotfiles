@@ -1,0 +1,26 @@
+#!/bin/sh
+set -eu
+
+device="kbd_backlight"
+brightnessctl="/home/redbeard/.local/bin/brightnessctl"
+
+[ -x "$brightnessctl" ] || brightnessctl="brightnessctl"
+
+case "${1:-}" in
+    up)
+        exec "$brightnessctl" --device="$device" set +20%
+        ;;
+    down)
+        exec "$brightnessctl" --device="$device" set 20%-
+        ;;
+    max)
+        exec "$brightnessctl" --device="$device" set 100%
+        ;;
+    off)
+        exec "$brightnessctl" --device="$device" set 0%
+        ;;
+    *)
+        echo "usage: macbook-keyboard-brightness {up|down|max|off}" >&2
+        exit 2
+        ;;
+esac
