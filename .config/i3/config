@@ -6,6 +6,8 @@ exec --no-startup-id /home/redbeard/.local/bin/fix-pointer-accel
 exec --no-startup-id /home/redbeard/.local/bin/setup-displays.sh
 exec --no-startup-id /home/redbeard/.config/polybar/launch.sh
 
+bindsym $mod+Ctrl+l exec --no-startup-id env XSECURELOCK_SAVER=/usr/libexec/xsecurelock/saver_blank XSECURELOCK_AUTH=/usr/local/libexec/xsecurelock/auth_terminal XSECURELOCK_AUTHPROTO=/usr/libexec/xsecurelock/authproto_pam XSECURELOCK_DISCARD_FIRST_KEYPRESS=1 xsecurelock
+
 bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen toggle
