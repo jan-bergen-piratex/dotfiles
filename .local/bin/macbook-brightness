@@ -1,0 +1,45 @@
+#!/bin/sh
+set -eu
+
+device="apple-panel-bl"
+backlight="/sys/class/backlight/$device"
+brightnessctl="/home/redbeard/.local/bin/brightnessctl"
+steps="0 2 4 7 10 15 20 25 30 40 50 60 70 80 90 100"
+
+[ -x "$brightnessctl" ] || brightnessctl="brightnessctl"
+
+current=$(cat "$backlight/brightness")
+max=$(cat "$backlight/max_brightness")
+percent=$(((current * 100 + max / 2) / max))
+
+set_brightness() {
+    exec "$brightnessctl" --device="$device" set "$1%"
+}
+
+case "${1:-}" in
+    up)
+        for step in $steps; do
+            if [ "$step" -gt "$percent" ]; then
+                set_brightness "$step"
+            fi
+        done
+        set_brightness 100
+        ;;
+    down)
+        target=0
+        for step in $steps; do
+            if [ "$step" -ge "$percent" ]; then
+                set_brightness "$target"
+            fi
+            target="$step"
+        done
+        set_brightness 90
+        ;;
+    max)
+        set_brightness 100
+        ;;
+    *)
+        echo "usage: macbook-brightness {up|down|max}" >&2
+        exit 2
+        ;;
+esac

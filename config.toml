@@ -47,6 +47,7 @@ newline = "⏎"
 enable = false
 
 [keys.normal]
+A-s = ":toggle-option soft-wrap.enable"
 C-f = '@<A-*>/<up><ret>'
 C-g = '@<A-*>/<up><ret>NN'
 C-w = "@emiw"
